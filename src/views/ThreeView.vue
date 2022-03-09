@@ -4,10 +4,11 @@
     <p class="title__text">-コードを書いて例題のイメージに近づけよう！</p>
   </div>
   <div class="content__wrapper">
-    <div
+    <router-link
       class="content__container"
       v-for="content in contents"
       v-bind:key="content.id"
+      to="/Lv1_Round"
     >
       <img
         class="content__img"
@@ -16,7 +17,7 @@
       />
       <p class="content__text">{{ content.text }}</p>
       <p class="content__record">{{ content.record }}</p>
-    </div>
+    </router-link>
   </div>
 </template>
 
@@ -62,7 +63,7 @@ html {
   box-sizing: inherit;
 }
 .title__container {
-  background-color: aquamarine;
+  background-color: rgb(118, 231, 178);
 }
 .title__logo {
   font-size: 3.5rem;
@@ -77,16 +78,20 @@ html {
 .content__wrapper {
   display: flex;
   justify-content: center;
-  border: 1px solid #333;
+  border: 1px solid black;
   padding: 80px;
 }
 .content__container {
-  border: 1px solid #333;
+  border: 1px solid black;
   margin: 0 40px;
   padding: 5px;
+  text-decoration: none;
+}
+.content__container:visited {
+  color: black;
 }
 .content__img {
-  border: 1px solid #333;
+  border: 1px solid black;
 }
 .content__text {
   font-weight: bold;

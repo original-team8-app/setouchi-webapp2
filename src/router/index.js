@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
+import Lv1_Round from "../views/Lv1_Round.vue"
 
 const routes = [
   {
@@ -21,6 +22,11 @@ const routes = [
     path: "/three",
     name: "three",
     component: ThreeView,
+  },
+  {
+    path: "/Lv1_Round",
+    name: "Lv1_Round",
+    component: Lv1_Round,
   },
 ]
 
