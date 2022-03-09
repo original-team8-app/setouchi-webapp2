@@ -5,17 +5,62 @@
 
   <div class="ruleIntroduction">
     <h2>ルール説明</h2>
-    <p>CSSでレイアウトを変更し、左画面にある車が目的地に到着させましょう！</p>
+    <p>
+      CSSでレイアウトを変更し、道路を作って左画面にある車を目的地に到着させましょう！
+    </p>
   </div>
-  <div>
-    <img
-      src="../assets/img/0683-download-image-m.png"
-      alt="Logo"
-      class="carIcon"
-    />
+  <div class="iconArea">
+    <div>
+      <img
+        src="../assets/img/0683-download-image-m.png"
+        alt="Logo"
+        class="carIcon"
+      />
+    </div>
+    <div>
+      <img src="../assets/img/images.png" alt="Logo" class="carIcon" />
+    </div>
+    <div>
+      <img
+        src="../assets/img//checker-flag_illust_79.png"
+        alt="Logo"
+        class="goalIcon"
+      />
+    </div>
   </div>
 
-  <div class="staetbutton">
-    <button>ゲームを始める</button>
+  <div>
+    <button class="startbutton">ゲームを始める</button>
   </div>
 </template>
+
+<style scoped>
+.about {
+  background-color: green;
+}
+
+.carIcon {
+  width: 50%;
+  height: 90%;
+}
+
+.goalIcon {
+  width: 40%;
+  height: 60%;
+}
+
+.iconArea {
+  display: flex;
+  flex-direction: row;
+}
+
+.startbutton {
+  background-color: white;
+  padding: 12px 24px;
+  color: black;
+  border-radius: 6px;
+  border-bottom: 4px solid hsl(241, 3%, 73%);
+  border-top: 0px;
+  transition: all 0.1s ease-in-out;
+}
+</style>
