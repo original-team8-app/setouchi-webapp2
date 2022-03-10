@@ -37,7 +37,7 @@
 export default {
   methods: {
     jumpToQ1: function () {
-      this.$router.push("/css_questions/first-question.vue")
+      this.$router.push("/css_questions/first-question")
     },
   },
 }

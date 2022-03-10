@@ -1,8 +1,14 @@
 <template>
   <div class="first-question">
-    <div>
-      <h1>第一問</h1>
-    </div>
+    <h1>第一問</h1>
+    <div></div>
+    <!-- <div>
+      <img
+        src="../assets/img/0683-download-image-m.png"
+        alt="Logo"
+        class="carIcon"
+      />
+    </div> -->
   </div>
 </template>
 
