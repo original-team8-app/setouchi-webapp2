@@ -30,9 +30,18 @@
   </div>
 
   <div>
-    <button class="startbutton">ゲームを始める</button>
+    <button @click="jumpToQ1" class="startbutton">ゲームを始める</button>
   </div>
 </template>
+<script>
+export default {
+  methods: {
+    jumpToQ1: function () {
+      this.$router.push("/css_questions/first-question.vue")
+    },
+  },
+}
+</script>
 
 <style scoped>
 .about {
