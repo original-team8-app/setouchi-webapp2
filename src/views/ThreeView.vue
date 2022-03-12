@@ -8,7 +8,7 @@
       class="content__container"
       v-for="content in contents"
       v-bind:key="content.id"
-      to="/Lv1_Round"
+      v-bind:to="content.path"
     >
       <img
         class="content__img"
@@ -28,6 +28,7 @@ export default {
       contents: [
         {
           id: 0,
+          path: "/Lv1_Round",
           imagePath: require("@/assets/MaruLv1.jpg"),
           imageAlt: "図形の丸です。",
           text: "まる",
@@ -35,6 +36,7 @@ export default {
         },
         {
           id: 1,
+          path: "/Lv1_Round",
           imagePath: require("@/assets/SankakuLv1.jpg"),
           imageAlt: "図形の三角です。",
           text: "さんかく",
@@ -42,6 +44,7 @@ export default {
         },
         {
           id: 2,
+          path: "/Lv1_Round",
           imagePath: require("@/assets/DaikeiLv1.jpg"),
           imageAlt: "図形の台形です。",
           text: "だいけい",
