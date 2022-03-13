@@ -66,7 +66,7 @@ html {
   box-sizing: inherit;
 }
 .title__container {
-  background-color: rgb(118, 231, 178);
+  background-color: rgb(123, 231, 181);
 }
 .title__logo {
   font-size: 3.5rem;
@@ -89,9 +89,15 @@ html {
   margin: 0 40px;
   padding: 5px;
   text-decoration: none;
+  opacity: 0.8;
+  transition: all 0.3s;
 }
 .content__container:visited {
   color: black;
+}
+.content__container:hover {
+  opacity: 1;
+  transform: scale(1.05, 1.05);
 }
 .content__img {
   border: 1px solid black;
