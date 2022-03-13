@@ -1,11 +1,14 @@
 <template>
+  <h1 class="title">Lv.1 まる</h1>
   <v-ace-editor
-    class="edit__area"
+    class="edit-area"
     v-model:value="content"
     lang="html"
     theme="monokai"
   />
-  <div class="display__area"></div>
+  <div>
+    <div class="reflect-area" v-html="content"></div>
+  </div>
 </template>
 
 <script>
@@ -18,28 +21,48 @@ export default {
   },
   data() {
     return {
-      content: "",
+      content: `<div class="object"></div>
+      
+<style>
+  .object{
+    width: 150px;
+    height: 150px;
+    background-color: pink;
+    /*ここにコードを追加*/
+  }
+</style>`,
     }
   },
-  // computed: {
-  //   inputCode: function () {
-  //     return this.content
-  //   },
-  // },
 }
 </script>
 
 <style scoped>
-.edit__area {
-  height: 80vh;
-  width: 80vh;
+html {
+  box-sizing: border-box;
 }
-.display__area {
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+.title {
+  text-align: left;
+  padding-left: 2rem;
+}
+.edit-area {
+  height: 80vh;
+  width: 70vh;
+  outline: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.reflect-area {
   position: absolute;
   top: 20vh;
-  left: 90vh;
+  left: 85vh;
   height: 40vh;
   width: 40vh;
-  outline: 1px solid black;
+  outline: auto;
+  padding: 10px;
 }
 </style>
