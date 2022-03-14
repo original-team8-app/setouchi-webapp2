@@ -10,7 +10,7 @@
     <div class="back" v-html="contentCode"></div>
     <div
       class="sample__back sample__opacity"
-      v-html="sample"
+      v-html="sampleCode"
       v-bind:style="{ opacity: opacityValue }"
     ></div>
   </div>
