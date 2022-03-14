@@ -81,7 +81,7 @@ html {
   margin: 0 40px;
   padding: 5px;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.9;
   transition: all 0.3s;
 }
 a {
@@ -93,6 +93,7 @@ a {
 }
 .content__img {
   border: 1px solid black;
+  border-radius: 5px;
   width: 250px;
 }
 .content__text {
