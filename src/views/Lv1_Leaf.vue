@@ -2,12 +2,12 @@
   <h1 class="title">Lv.1 葉っぱ</h1>
   <v-ace-editor
     class="edit-area"
-    v-model:value="content"
+    v-model:value="contentCode"
     lang="html"
     theme="monokai"
   />
   <div>
-    <div class="back" v-html="content"></div>
+    <div class="back" v-html="contentCode"></div>
     <div
       class="sample__back sample__opacity"
       v-html="sample"
@@ -15,7 +15,7 @@
     ></div>
   </div>
   <div>
-    <div class="sample__back" v-html="sample"></div>
+    <div class="sample__back" v-html="sampleCode"></div>
   </div>
   <label class="opacity-bar"
     ><input
@@ -35,6 +35,12 @@
     <option value="0.8"></option>
     <option value="1"></option>
   </datalist>
+  <!-- <div class="color-palette">
+    <div class="color-list">
+      <div class="color-checker"></div>
+      <div class="color-code"></div>
+    </div>
+  </div> -->
 </template>
 
 <script>
@@ -48,7 +54,7 @@ export default {
   data() {
     return {
       opacityValue: 0,
-      sample: `<div class="sample__object"></div>
+      sampleCode: `<div class="sample__object"></div>
 
 <style>
   .sample__object{
@@ -65,7 +71,7 @@ export default {
     background-color: #fafad7;
     }
 </style>`,
-      content: `<div class="object"></div>
+      contentCode: `<div class="object"></div>
 
 <style>
   .object{
