@@ -99,6 +99,7 @@ html {
 .edit-area {
   height: 80vh;
   width: 70vh;
+  font-size: 1rem;
   outline: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
