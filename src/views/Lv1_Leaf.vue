@@ -11,20 +11,29 @@
     <div
       class="sample__back sample__opacity"
       v-html="sample"
-      style="opacity: 0.5"
+      v-bind:style="{ opacity: opacityValue }"
     ></div>
   </div>
   <div>
     <div class="sample__back" v-html="sample"></div>
   </div>
-  <label><input type="range" value="0" list="opacityList" />透過度</label>
+  <label class="opacity-bar"
+    ><input
+      type="range"
+      min="0"
+      max="1"
+      step="0.01"
+      list="opacityList"
+      v-model="opacityValue"
+    />透過度</label
+  >
   <datalist id="opacityList">
     <option value="0"></option>
-    <option value="20"></option>
-    <option value="40"></option>
-    <option value="60"></option>
-    <option value="80"></option>
-    <option value="100"></option>
+    <option value="0.2"></option>
+    <option value="0.4"></option>
+    <option value="0.6"></option>
+    <option value="0.8"></option>
+    <option value="1"></option>
   </datalist>
 </template>
 
@@ -38,6 +47,7 @@ export default {
   },
   data() {
     return {
+      opacityValue: 0,
       sample: `<div class="sample__object"></div>
 
 <style>
@@ -114,5 +124,11 @@ html {
 .sample__opacity {
   top: 20vh;
   left: 85vh;
+}
+.opacity-bar {
+  position: absolute;
+  top: 65vh;
+  left: 95vh;
+  transform: scale(1.7, 1.5);
 }
 </style>
