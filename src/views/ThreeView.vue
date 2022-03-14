@@ -28,7 +28,7 @@ export default {
       contents: [
         {
           id: 0,
-          path: "/Lv1_Round",
+          path: "/Lv1_Leaf",
           imagePath: require("@/assets/MaruLv1.jpg"),
           imageAlt: "図形の丸です。",
           text: "まる",
@@ -36,7 +36,7 @@ export default {
         },
         {
           id: 1,
-          path: "/Lv1_Round",
+          path: "/Lv1_Leaf",
           imagePath: require("@/assets/SankakuLv1.jpg"),
           imageAlt: "図形の三角です。",
           text: "さんかく",
@@ -44,7 +44,7 @@ export default {
         },
         {
           id: 2,
-          path: "/Lv1_Round",
+          path: "/Lv1_Leaf",
           imagePath: require("@/assets/DaikeiLv1.jpg"),
           imageAlt: "図形の台形です。",
           text: "だいけい",
@@ -66,7 +66,7 @@ html {
   box-sizing: inherit;
 }
 .title__container {
-  background-color: rgb(123, 231, 181);
+  background-color: #008000;
 }
 .title__logo {
   font-size: 3.5rem;
@@ -92,7 +92,7 @@ html {
   opacity: 0.8;
   transition: all 0.3s;
 }
-.content__container:visited {
+a {
   color: black;
 }
 .content__container:hover {

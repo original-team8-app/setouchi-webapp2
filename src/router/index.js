@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
-import Lv1_Round from "../views/Lv1_Round.vue"
+import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 
 const routes = [
   {
@@ -24,9 +24,9 @@ const routes = [
     component: ThreeView,
   },
   {
-    path: "/Lv1_Round",
-    name: "Lv1_Round",
-    component: Lv1_Round,
+    path: "/Lv1_Leaf",
+    name: "Lv1_Leaf",
+    component: Lv1_Leaf,
   },
 ]
 
