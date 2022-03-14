@@ -1,5 +1,5 @@
 <template>
-  <h1 class="title">Lv.1 葉っぱ</h1>
+  <h1 class="title">{{ title }}</h1>
   <v-ace-editor
     class="edit-area"
     v-model:value="contentCode"
@@ -35,12 +35,22 @@
     <option value="0.8"></option>
     <option value="1"></option>
   </datalist>
-  <!-- <div class="color-palette">
-    <div class="color-list">
-      <div class="color-checker"></div>
-      <div class="color-code"></div>
+  <div class="color-palette">
+    <div
+      class="color-list"
+      v-for="colorCode in colorCodes"
+      v-bind:key="colorCode.index"
+    >
+      <div
+        class="color-checker"
+        v-bind:style="{
+          backgroundColor: colorCode,
+        }"
+      ></div>
+      <div class="color-code">{{ colorCode }}</div>
     </div>
-  </div> -->
+  </div>
+  <button class="finish-button">完成！</button>
 </template>
 
 <script>
@@ -54,6 +64,8 @@ export default {
   data() {
     return {
       opacityValue: 0,
+      title: "Lv.1 葉っぱ",
+      colorCodes: ["#008000", "#fafad7"],
       sampleCode: `<div class="sample__object"></div>
 
 <style>
@@ -137,5 +149,39 @@ html {
   top: 65vh;
   left: 95vh;
   transform: scale(1.7, 1.5);
+}
+.color-palette {
+  background-color: rgb(230, 227, 227);
+  width: 300px;
+  padding: 10px 10px;
+  position: absolute;
+  top: 65vh;
+  left: 135vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.color-list {
+  display: flex;
+  margin: 10px 10px 10px 20px;
+}
+.color-checker {
+  height: 20px;
+  width: 20px;
+  outline: auto;
+  border-radius: 10px;
+}
+.color-code {
+  line-height: 20px;
+  font-size: 1.3rem;
+  padding: 0 10px;
+}
+.finish-button {
+  position: absolute;
+  top: 85vh;
+  left: 150vh;
+  height: 60px;
+  width: 130px;
+  font-size: 1.5rem;
 }
 </style>
