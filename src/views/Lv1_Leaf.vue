@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      title: "Lv.1 葉っぱ",
+      title: "Lv.1 Leaf",
       colorCodes: ["#008000", "#fafad7"],
       sampleCode: `<div class="sample__object"></div>
 

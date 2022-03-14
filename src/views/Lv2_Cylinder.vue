@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      title: "Lv.2 円柱",
+      title: "Lv.2 Cylinder",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
       sampleCode: `<div class="sample__object"></div>
 
