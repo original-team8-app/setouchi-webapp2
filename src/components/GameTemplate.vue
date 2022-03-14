@@ -1,13 +1,8 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
-  <v-ace-editor
-    class="edit-area"
-    v-model:value="contentCode"
-    lang="html"
-    theme="monokai"
-  />
+
   <div>
-    <div class="back" v-html="contentCode"></div>
+    <div class="back" v-html="passContentCode"></div>
     <div
       class="sample__back sample__opacity"
       v-html="passSampleCode"
@@ -54,34 +49,16 @@
 </template>
 
 <script>
-import { VAceEditor } from "vue3-ace-editor"
-import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-monokai"
 export default {
-  components: {
-    VAceEditor,
-  },
   props: {
     passTitle: String,
     passColorCodes: Array,
     passSampleCode: String,
+    passContentCode: String,
   },
   data() {
     return {
       opacityValue: 0,
-      contentCode: `<div class="object"></div>
-
-<style>
-  .object{
-    width: 150px;
-    height: 150px;
-    background-color: #008000;
-    /*ここにコードを追加*/
-  }
-  .back{
-
-  }
-</style>`,
     }
   },
 }
@@ -99,14 +76,6 @@ html {
 .title {
   text-align: left;
   padding-left: 2rem;
-}
-.edit-area {
-  height: 80vh;
-  width: 70vh;
-  font-size: 1rem;
-  outline: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 .back {
   position: absolute;
