@@ -1,6 +1,5 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
-
   <div>
     <div class="back" v-html="passContentCode"></div>
     <div
@@ -118,7 +117,7 @@ html {
 }
 .color-list {
   display: flex;
-  margin: 10px 10px 10px 20px;
+  margin: 10px 10px 10px 10px;
 }
 .color-checker {
   height: 20px;

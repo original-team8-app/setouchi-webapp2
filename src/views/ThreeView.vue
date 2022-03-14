@@ -29,25 +29,17 @@ export default {
         {
           id: 0,
           path: "/Lv1_Leaf",
-          imagePath: require("@/assets/MaruLv1.jpg"),
-          imageAlt: "図形の丸です。",
-          text: "まる",
+          imagePath: require("@/assets/LeafImg.jpg"),
+          imageAlt: "レベル1「葉っぱ」です。",
+          text: "葉っぱ",
           record: "前回の記録:〇分〇〇秒",
         },
         {
           id: 1,
-          path: "/Lv1_Leaf",
-          imagePath: require("@/assets/SankakuLv1.jpg"),
-          imageAlt: "図形の三角です。",
-          text: "さんかく",
-          record: "前回の記録:〇分〇〇秒",
-        },
-        {
-          id: 2,
-          path: "/Lv1_Leaf",
-          imagePath: require("@/assets/DaikeiLv1.jpg"),
-          imageAlt: "図形の台形です。",
-          text: "だいけい",
+          path: "/Lv2_Cylinder",
+          imagePath: require("@/assets/SylinderImg.jpg"),
+          imageAlt: "レベル2「円柱」です。",
+          text: "円柱",
           record: "前回の記録:〇分〇〇秒",
         },
       ],
@@ -101,6 +93,7 @@ a {
 }
 .content__img {
   border: 1px solid black;
+  width: 250px;
 }
 .content__text {
   font-weight: bold;

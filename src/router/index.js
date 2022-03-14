@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
+import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     path: "/Lv1_Leaf",
     name: "Lv1_Leaf",
     component: Lv1_Leaf,
+  },
+  {
+    path: "/Lv2_Cylinder",
+    name: "Lv2_Cylinder",
+    component: Lv2_Cylinder,
   },
 ]
 
