@@ -54,6 +54,13 @@ export default {
           text: "Unknown Icon",
           record: "前回の記録:〇分〇〇秒",
         },
+        {
+          path: "/Lv5_Triangle",
+          imagePath: require("@/assets/TriangleImg.jpg"),
+          imageAlt: "レベル5「Triangle」です。",
+          text: "Triangle",
+          record: "前回の記録:〇分〇〇秒",
+        },
       ],
     }
   },
