@@ -7,7 +7,7 @@
     <router-link
       class="content__container"
       v-for="content in contents"
-      v-bind:key="content.id"
+      v-bind:key="content.index"
       v-bind:to="content.path"
     >
       <img
@@ -27,7 +27,6 @@ export default {
     return {
       contents: [
         {
-          id: 0,
           path: "/Lv1_Leaf",
           imagePath: require("@/assets/LeafImg.jpg"),
           imageAlt: "レベル1「Leaf」です。",
@@ -35,11 +34,17 @@ export default {
           record: "前回の記録:〇分〇〇秒",
         },
         {
-          id: 1,
           path: "/Lv2_Cylinder",
           imagePath: require("@/assets/SylinderImg.jpg"),
           imageAlt: "レベル2「Cylinder」です。",
           text: "Cylinder",
+          record: "前回の記録:〇分〇〇秒",
+        },
+        {
+          path: "/Lv3_Cancel Button",
+          imagePath: require("@/assets/CancelButtonImg.jpg"),
+          imageAlt: "レベル2「Cancel Button」です。",
+          text: "Cancel Button",
           record: "前回の記録:〇分〇〇秒",
         },
       ],

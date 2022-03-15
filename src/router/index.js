@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
+import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
 
 const routes = [
   {
@@ -33,6 +34,11 @@ const routes = [
     path: "/Lv2_Cylinder",
     name: "Lv2_Cylinder",
     component: Lv2_Cylinder,
+  },
+  {
+    path: "/Lv3_CancelButton",
+    name: "Lv3_CancelButton",
+    component: Lv3_CancelButton,
   },
 ]
 

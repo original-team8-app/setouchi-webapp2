@@ -25,53 +25,54 @@ export default {
   },
   data() {
     return {
-      title: "Lv.2 Cylinder",
-      colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
+      title: "Lv.3 Cancel Button",
+      colorCodes: ["#ff0000", "#ffffff", "#5a96c7"],
       sampleCode: `<div class="sample__object"></div>
+      <div class="sample__bar1">
+      <div class="sample__bar2">
 
 <style>
-      .sample__object {
-        width: 100px;
-        height: 150px;
-        background-color: #40e0d0;
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .sample__object::before {
-        content: "";
-        width: 100px;
-        height: 50px;
-        background-color: #20b2aa;
-        position: absolute;
-        top: -30px;
-        left: 0;
-        border-radius: 45%;
-      }
-
-      .sample__object::after {
-        content: "";
-        width: 100px;
-        height: 50px;
-        background-color: #40e0d0;
-        position: absolute;
-        top: 120px;
-        left: 0;
-        border-radius: 45%;
-      }
-      .sample__back{
-        background-color:#fffaf0;
-      }
-    </style>`,
+  .sample__object{
+    background-color: #ff0000;
+    width: 180px;
+    height: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+  .sample__bar1{
+    background-color: #ffffff;
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 10px;
+  }
+  .sample__bar2{
+    background-color: #ffffff;
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+    border-radius: 10px;
+  }
+  .sample__back{
+    background-color: #5a96c7;
+  }
+</style>`,
       contentCode: `<div class="object"></div>
 
 <style>
   .object{
     width: 150px;
     height: 150px;
-    background-color: #40e0d0;
+    background-color: #ff0000;
     /*ここにコードを追加*/
   }
   .back{

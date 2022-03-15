@@ -54,7 +54,7 @@ export default {
     /*ここにコードを追加*/
   }
   .back{
-
+    
   }
 </style>`,
     }
