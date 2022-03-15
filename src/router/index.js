@@ -6,6 +6,7 @@ import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
 import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
 import Lv5_Triangle from "../views/Lv5_Triangle.vue"
+import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 
 const routes = [
   {
@@ -51,6 +52,11 @@ const routes = [
     path: "/Lv5_Triangle",
     name: "Lv5_Triangle",
     component: Lv5_Triangle,
+  },
+  {
+    path: "/Lv6_Infinity",
+    name: "Lv6_Infinity",
+    component: Lv6_Infinity,
   },
 ]
 

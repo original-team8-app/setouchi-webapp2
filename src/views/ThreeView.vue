@@ -61,6 +61,13 @@ export default {
           text: "Triangle",
           record: "前回の記録:〇分〇〇秒",
         },
+        {
+          path: "/Lv6_Infinity",
+          imagePath: require("@/assets/InfinityImg.jpg"),
+          imageAlt: "レベル6「Infinity」です。",
+          text: "Infinity",
+          record: "前回の記録:〇分〇〇秒",
+        },
       ],
     }
   },
