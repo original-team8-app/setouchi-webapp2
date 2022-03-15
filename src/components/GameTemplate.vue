@@ -11,24 +11,10 @@
   <div>
     <div class="sample__back" v-html="passSampleCode"></div>
   </div>
-  <label class="opacity-bar"
-    ><input
-      type="range"
-      min="0"
-      max="1"
-      step="0.01"
-      list="opacityList"
-      v-model="opacityValue"
-    />透過度</label
-  >
-  <datalist id="opacityList">
-    <option value="0"></option>
-    <option value="0.2"></option>
-    <option value="0.4"></option>
-    <option value="0.6"></option>
-    <option value="0.8"></option>
-    <option value="1"></option>
-  </datalist>
+  <div class="opacity-bar">
+    透過度:
+    <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
+  </div>
   <div class="color-palette">
     <div
       class="color-list"
@@ -102,7 +88,8 @@ html {
   position: absolute;
   top: 65vh;
   left: 95vh;
-  transform: scale(1.7, 1.5);
+  transform: scale(1.5, 1.5);
+  font-size: 14px;
 }
 .color-palette {
   background-color: rgb(230, 227, 227);

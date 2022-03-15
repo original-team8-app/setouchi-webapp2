@@ -41,7 +41,7 @@ export default {
           record: "前回の記録:〇分〇〇秒",
         },
         {
-          path: "/Lv3_Cancel Button",
+          path: "/Lv3_CancelButton",
           imagePath: require("@/assets/CancelButtonImg.jpg"),
           imageAlt: "レベル2「Cancel Button」です。",
           text: "Cancel Button",
@@ -63,7 +63,7 @@ html {
   box-sizing: inherit;
 }
 .title__container {
-  background-color: #008000;
+  background-color: #89cf89;
 }
 .title__logo {
   font-size: 3.5rem;
