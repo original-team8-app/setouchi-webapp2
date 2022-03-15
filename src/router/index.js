@@ -4,6 +4,7 @@ import ThreeView from "../views/ThreeView.vue"
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
+import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     path: "/Lv3_CancelButton",
     name: "Lv3_CancelButton",
     component: Lv3_CancelButton,
+  },
+  {
+    path: "/Lv4_UnknownIcon",
+    name: "Lv4_UnknownIcon",
+    component: Lv4_UnknownIcon,
   },
 ]
 

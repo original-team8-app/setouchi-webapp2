@@ -43,8 +43,15 @@ export default {
         {
           path: "/Lv3_CancelButton",
           imagePath: require("@/assets/CancelButtonImg.jpg"),
-          imageAlt: "レベル2「Cancel Button」です。",
+          imageAlt: "レベル3「Cancel Button」です。",
           text: "Cancel Button",
+          record: "前回の記録:〇分〇〇秒",
+        },
+        {
+          path: "/Lv4_UnknownIcon",
+          imagePath: require("@/assets/UnknownIconImg.jpg"),
+          imageAlt: "レベル4「Unknown Icon」です。",
+          text: "Unknown Icon",
           record: "前回の記録:〇分〇〇秒",
         },
       ],
