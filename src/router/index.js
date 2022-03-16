@@ -8,6 +8,7 @@ import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
 import Lv5_Triangle from "../views/Lv5_Triangle.vue"
 import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 import Lv7_Diamond from "../views/Lv7_Diamond.vue"
+import Lv8_Star from "../views/Lv8_Star.vue"
 
 const routes = [
   {
@@ -63,6 +64,11 @@ const routes = [
     path: "/Lv7_Diamond",
     name: "Lv7_Diamond",
     component: Lv7_Diamond,
+  },
+  {
+    path: "/Lv8_Star",
+    name: "Lv8_Star",
+    component: Lv8_Star,
   },
 ]
 

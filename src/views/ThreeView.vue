@@ -1,7 +1,9 @@
 <template>
   <div class="title__container">
     <h2 class="title__logo">CSS battle</h2>
-    <p class="title__text">-コードを書いて例題のイメージに近づけよう！</p>
+    <p class="title__text">
+      -コードを書いて例題のイメージに近づけよう！( 全12コース )
+    </p>
   </div>
   <div class="content__wrapper">
     <router-link
@@ -73,6 +75,13 @@ export default {
           imagePath: require("@/assets/DiamondImg.jpg"),
           imageAlt: "レベル7「Diamond」です。",
           text: "Diamond",
+          record: "前回の記録:〇分〇〇秒",
+        },
+        {
+          path: "/Lv8_Star",
+          imagePath: require("@/assets/StarImg.jpg"),
+          imageAlt: "レベル8「Star」です。",
+          text: "Star",
           record: "前回の記録:〇分〇〇秒",
         },
       ],
