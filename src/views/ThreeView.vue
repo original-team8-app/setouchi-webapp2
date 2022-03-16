@@ -1,11 +1,12 @@
 <template>
   <div class="title__container">
-    <h2 class="title__logo">CSS battle</h2>
+    <h2 class="title__logo">CSS Park</h2>
     <p class="title__text">
       -コードを書いて例題のイメージに近づけよう！( 全12コース )
     </p>
   </div>
   <div class="content__wrapper">
+    <div class="content__title">Contents Lv.1~8</div>
     <router-link
       class="content__container"
       v-for="content in contents"
@@ -100,7 +101,7 @@ html {
   box-sizing: inherit;
 }
 .title__container {
-  background-color: #89cf89;
+  background-color: #afcbff;
 }
 .title__logo {
   font-size: 3.5rem;
@@ -114,14 +115,23 @@ html {
 }
 .content__wrapper {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #faffff;
   border: 1px solid black;
-  padding: 80px;
-  overflow-x: scroll;
+  padding: 60px 0;
+}
+.content__title {
+  font-size: 2rem;
+  width: 100%;
+  text-align: left;
+  padding-left: 40px;
 }
 .content__container {
   border: 1px solid black;
-  margin: 0 40px;
+  margin: 30px 30px;
   padding: 5px;
+  border-radius: 5px;
   text-decoration: none;
   opacity: 0.9;
   transition: all 0.3s;
