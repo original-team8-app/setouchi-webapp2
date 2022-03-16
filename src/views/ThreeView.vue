@@ -68,6 +68,13 @@ export default {
           text: "Infinity",
           record: "前回の記録:〇分〇〇秒",
         },
+        {
+          path: "/Lv7_Diamond",
+          imagePath: require("@/assets/DiamondImg.jpg"),
+          imageAlt: "レベル7「Diamond」です。",
+          text: "Diamond",
+          record: "前回の記録:〇分〇〇秒",
+        },
       ],
     }
   },
@@ -98,14 +105,13 @@ html {
 }
 .content__wrapper {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
   border: 1px solid black;
   padding: 80px;
+  overflow-x: scroll;
 }
 .content__container {
   border: 1px solid black;
-  margin: 0 40px 30px 0;
+  margin: 0 40px;
   padding: 5px;
   text-decoration: none;
   opacity: 0.9;

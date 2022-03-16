@@ -7,6 +7,7 @@ import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
 import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
 import Lv5_Triangle from "../views/Lv5_Triangle.vue"
 import Lv6_Infinity from "../views/Lv6_Infinity.vue"
+import Lv7_Diamond from "../views/Lv7_Diamond.vue"
 
 const routes = [
   {
@@ -57,6 +58,11 @@ const routes = [
     path: "/Lv6_Infinity",
     name: "Lv6_Infinity",
     component: Lv6_Infinity,
+  },
+  {
+    path: "/Lv7_Diamond",
+    name: "Lv7_Diamond",
+    component: Lv7_Diamond,
   },
 ]
 
