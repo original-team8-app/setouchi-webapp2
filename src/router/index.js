@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 
+
 import firstQuestion from "../views/css_questions/first-question.vue"
+
 
 
 const routes = [
@@ -25,6 +27,36 @@ const routes = [
     name: "firstQuestion",
     component: firstQuestion,
 
+  },
+  {
+    path: "/Lv1_Leaf",
+    name: "Lv1_Leaf",
+    component: Lv1_Leaf,
+  },
+  {
+    path: "/Lv2_Cylinder",
+    name: "Lv2_Cylinder",
+    component: Lv2_Cylinder,
+  },
+  {
+    path: "/Lv3_CancelButton",
+    name: "Lv3_CancelButton",
+    component: Lv3_CancelButton,
+  },
+  {
+    path: "/Lv4_UnknownIcon",
+    name: "Lv4_UnknownIcon",
+    component: Lv4_UnknownIcon,
+  },
+  {
+    path: "/Lv5_Triangle",
+    name: "Lv5_Triangle",
+    component: Lv5_Triangle,
+  },
+  {
+    path: "/Lv6_Infinity",
+    name: "Lv6_Infinity",
+    component: Lv6_Infinity,
   },
 ]
 
