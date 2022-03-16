@@ -22,19 +22,37 @@
           v-bind:src="require('@/assets/img/goalflag.png')"
         />
         <img class="roadIcon" v-bind:src="require('@/assets/img/road.png')" />
+        <img class="roadIcon" v-bind:src="require('@/assets/img/road.png')" />
       </div>
       <div id="CssEditor">
         <div>
           <h2>CSSで記述しよう！</h2>
           <p>CSSの表現を使い道路を配置して車を目的地へ導きましょう！</p>
         </div>
-        <textarea class="writtenCode"></textarea>
+        <v-ace-editor
+          v-model:value="content"
+          @init="editorInit"
+          lang="html"
+          theme="chrome"
+          style="height: 300px"
+        />
         <button>ヒント💡</button>
         <button>完成！</button>
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import { VAceEditor } from "vue3-ace-editor"
+import "ace-builds/src-noconflict/mode-html"
+import "ace-builds/src-noconflict/theme-monokai"
+export default {
+  components: {
+    VAceEditor,
+  },
+}
+</script>
 
 <style scoped>
 .questionArea {
@@ -72,7 +90,7 @@
 }
 
 .roadIcon {
-  height: 100%;
+  height: 50%;
   width: 10%;
 }
 </style>
