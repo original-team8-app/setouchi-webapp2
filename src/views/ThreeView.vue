@@ -99,12 +99,13 @@ html {
 .content__wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   border: 1px solid black;
   padding: 80px;
 }
 .content__container {
   border: 1px solid black;
-  margin: 0 40px;
+  margin: 0 40px 30px 0;
   padding: 5px;
   text-decoration: none;
   opacity: 0.9;
