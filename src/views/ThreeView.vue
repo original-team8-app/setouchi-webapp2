@@ -2,11 +2,11 @@
   <div class="title__container">
     <h2 class="title__logo">CSS Park</h2>
     <p class="title__text">
-      -コードを書いて例題のイメージに近づけよう！( 全12コース )
+      -コードを書いて例題のイメージに近づけよう！( 全12ステージ )
     </p>
   </div>
   <div class="content__wrapper">
-    <div class="content__title">Contents Lv.1~8</div>
+    <span class="content__title">Contents Lv.1~8</span>
     <router-link
       class="content__container"
       v-for="content in contents"
@@ -119,13 +119,18 @@ html {
   flex-wrap: wrap;
   background-color: #faffff;
   border: 1px solid black;
-  padding: 60px 0;
+  border-radius: 5px;
+  padding: 35px 0;
+  margin: 50px 20px;
+  position: relative;
 }
 .content__title {
-  font-size: 2rem;
-  width: 100%;
-  text-align: left;
-  padding-left: 40px;
+  font-size: 2.3rem;
+  position: absolute;
+  top: -2.5%;
+  left: 3%;
+  background-color: #faffff;
+  padding: 0 1rem 0 1rem;
 }
 .content__container {
   border: 1px solid black;
