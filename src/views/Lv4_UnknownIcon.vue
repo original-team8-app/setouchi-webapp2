@@ -80,7 +80,5 @@ export default {
   width: 70vh;
   font-size: 1rem;
   outline: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 </style>
