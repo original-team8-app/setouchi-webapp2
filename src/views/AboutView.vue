@@ -11,21 +11,13 @@
   </div>
   <div class="iconArea">
     <div>
-      <img
-        src="../assets/img/0683-download-image-m.png"
-        alt="Logo"
-        class="carIcon"
-      />
+      <img src="../assets/img/carIcon9.png" alt="Logo" class="carIcon" />
     </div>
     <div>
-      <img src="../assets/img/images.png" alt="Logo" class="carIcon" />
+      <img src="../assets/img/arrow.png" alt="Logo" class="arrowIcon" />
     </div>
     <div>
-      <img
-        src="../assets/img//checker-flag_illust_79.png"
-        alt="Logo"
-        class="goalIcon"
-      />
+      <img src="../assets/img/goalflag.png" alt="Logo" class="goalIcon" />
     </div>
   </div>
 
@@ -47,7 +39,7 @@ export default {
 .about {
   background-color: green;
 }
-
+/* 
 .carIcon {
   width: 50%;
   height: 90%;
@@ -56,11 +48,17 @@ export default {
 .goalIcon {
   width: 40%;
   height: 60%;
-}
+} */
 
 .iconArea {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+}
+
+.arrowIcon {
+  width: 50%;
+  height: 50%;
 }
 
 .startbutton {
