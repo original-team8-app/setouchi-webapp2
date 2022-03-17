@@ -30,7 +30,9 @@
       <div class="color-code">{{ passColorCode }}</div>
     </div>
   </div>
-  <button class="finish-button">完成！</button>
+  <router-link to="/feedback">
+    <button class="finish-button">完成！</button>
+  </router-link>
 </template>
 
 <script>

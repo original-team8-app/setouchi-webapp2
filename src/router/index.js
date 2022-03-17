@@ -9,6 +9,7 @@ import Lv5_Triangle from "../views/Lv5_Triangle.vue"
 import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 import Lv7_Diamond from "../views/Lv7_Diamond.vue"
 import Lv8_Star from "../views/Lv8_Star.vue"
+import FeedbackView from "../views/FeedbackView.vue"
 
 const routes = [
   {
@@ -69,6 +70,11 @@ const routes = [
     path: "/Lv8_Star",
     name: "Lv8_Star",
     component: Lv8_Star,
+  },
+  {
+    path: "/feedback",
+    name: "feedback",
+    component: FeedbackView,
   },
 ]
 

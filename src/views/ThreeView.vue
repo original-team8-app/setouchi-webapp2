@@ -125,9 +125,9 @@ html {
   position: relative;
 }
 .content__title {
-  font-size: 2.3rem;
+  font-size: 2rem;
   position: absolute;
-  top: -2.5%;
+  top: -2%;
   left: 3%;
   background-color: #faffff;
   padding: 0 1rem 0 1rem;
