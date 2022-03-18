@@ -75,6 +75,7 @@ const routes = [
     path: "/feedback",
     name: "feedback",
     component: FeedbackView,
+    props: true,
   },
 ]
 

@@ -1,10 +1,17 @@
 <template>
   <div>
-    <div class="back"></div>
+    <div class="back" v-html="deliveryData"></div>
   </div>
 </template>
 
-<script></script>
+<script>
+export default {
+  props: ["deliveryData"],
+  data() {
+    return {}
+  },
+}
+</script>
 
 <style scoped>
 .back {

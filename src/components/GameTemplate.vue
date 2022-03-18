@@ -41,11 +41,9 @@
       <div class="color-code">{{ passColorCode }}</div>
     </div>
   </div>
-  <router-link to="/feedback">
-    <button class="finish-button" @click="updateSavedContentCode">
-      {{ finishButtonText }}
-    </button>
-  </router-link>
+  <button class="finish-button" @click="updateSavedContentCode">
+    {{ finishButtonText }}
+  </button>
 </template>
 
 <script>
@@ -82,6 +80,10 @@ export default {
     updateSavedContentCode() {
       setDoc(doc(db, "contents", this.passTitle), {
         contentCode: this.passContentCode,
+      })
+      this.$router.push({
+        name: "feedback",
+        params: { deliveryData: this.passContentCode },
       })
     },
   },
