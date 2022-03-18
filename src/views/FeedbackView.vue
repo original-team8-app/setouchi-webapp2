@@ -1,7 +1,7 @@
 <template>
   <div v-for="content in contents" :key="content.id">
     <div>
-      <div class="feedback__canvas" v-html="content.contentCode"></div>
+      <div class="back" v-html="content.contentCode"></div>
     </div>
   </div>
 </template>
@@ -30,10 +30,10 @@ export default {
 </script>
 
 <style scoped>
-.feedback__canvas {
-  /* position: absolute;
+.back {
+  position: relative;
   top: 25vh;
-  left: 80vh; */
+  left: 80vh;
   height: 300px;
   width: 300px;
   outline: auto;
