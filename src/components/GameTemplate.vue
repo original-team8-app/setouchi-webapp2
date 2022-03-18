@@ -42,7 +42,7 @@
     </div>
   </div>
   <router-link to="/feedback">
-    <button class="finish-button">完成！</button>
+    <button class="finish-button">{{ finishButtonText }}</button>
   </router-link>
 </template>
 
@@ -70,6 +70,7 @@ export default {
         "「完成!」ボタンを押して終了！ その時点のコードとキャンバスが保存されるよ!",
       ],
       howToHint: "Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...",
+      finishButtonText: "完成！",
     }
   },
 }
