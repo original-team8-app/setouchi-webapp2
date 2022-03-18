@@ -1,5 +1,7 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
+  <div class="label__canvas">- キャンバス</div>
+  <div class="label__sample">- 完成例</div>
   <div>
     <div class="back" v-html="passContentCode"></div>
     <div
@@ -14,6 +16,21 @@
   <div class="opacity-bar">
     透過度:
     <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
+  </div>
+  <div class="how-to__wrapper">
+    <p class="how-to__title">遊び方</p>
+    <ol class="how-to__text">
+      <li>html,cssを記述して「完成例」イメージを作成しよう!</li>
+      <li>エディタに記述したコードは「キャンバス」に反映されるよ!</li>
+      <li>正解は1つとは限らないよ! 色々な方法を模索してみよう!</li>
+      <li>
+        「完成!」ボタンを押して終了！
+        その時点のコードとキャンバスが保存されるよ!
+      </li>
+    </ol>
+    <p class="how-to__hint">
+      Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...
+    </p>
   </div>
   <div class="color-palette">
     <div
@@ -62,12 +79,28 @@ html {
 }
 .title {
   text-align: left;
-  padding-left: 2rem;
+  padding: 10px 3rem;
+  margin: 0;
+}
+.label__canvas {
+  position: absolute;
+  top: 21vh;
+  left: 80vh;
+  width: 120px;
+  font-size: 1.2rem;
+  /* background-color: rgb(230, 227, 227); */
+}
+.label__sample {
+  position: absolute;
+  top: 21vh;
+  left: 135vh;
+  width: 80px;
+  font-size: 1.2rem;
 }
 .back {
   position: absolute;
-  top: 20vh;
-  left: 85vh;
+  top: 25vh;
+  left: 80vh;
   height: 300px;
   width: 300px;
   outline: auto;
@@ -75,7 +108,7 @@ html {
 }
 .sample__back {
   position: absolute;
-  top: 20vh;
+  top: 25vh;
   left: 135vh;
   height: 300px;
   width: 300px;
@@ -83,22 +116,46 @@ html {
   padding: 10px;
 }
 .sample__opacity {
-  top: 20vh;
-  left: 85vh;
+  top: 25vh;
+  left: 80vh;
 }
 .opacity-bar {
   position: absolute;
-  top: 65vh;
-  left: 95vh;
-  transform: scale(1.5, 1.5);
+  top: 69vh;
+  left: 89vh;
+  transform: scale(1.7, 1.5);
   font-size: 14px;
+}
+.how-to__wrapper {
+  background-color: rgb(230, 227, 227);
+  width: 420px;
+  height: 165px;
+  /* opacity: 0.5; */
+  position: absolute;
+  top: 77vh;
+  left: 75vh;
+  overflow-y: scroll;
+}
+.how-to__title {
+  font-size: 1.5rem;
+}
+.how-to__text li {
+  text-align: justify;
+  margin-bottom: 15px;
+  padding-right: 30px;
+}
+.how-to__hint {
+  font-size: 14px;
+  padding: 15px 30px 0 60px;
+  text-align: justify;
+  text-indent: -35px;
 }
 .color-palette {
   background-color: rgb(230, 227, 227);
   width: 300px;
   padding: 10px 10px;
   position: absolute;
-  top: 65vh;
+  top: 70vh;
   left: 135vh;
   display: flex;
   align-items: center;
@@ -121,10 +178,10 @@ html {
 }
 .finish-button {
   position: absolute;
-  top: 85vh;
+  top: 90vh;
   left: 150vh;
   height: 60px;
-  width: 130px;
+  width: 150px;
   font-size: 1.5rem;
 }
 </style>
