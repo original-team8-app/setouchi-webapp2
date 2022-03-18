@@ -10,13 +10,13 @@
     <router-link
       class="content__container"
       v-for="content in contents"
-      v-bind:key="content.index"
-      v-bind:to="content.path"
+      :key="content.index"
+      :to="content.path"
     >
       <img
         class="content__img"
-        v-bind:src="content.imagePath"
-        v-bind:alt="content.imageAlt"
+        :src="content.imagePath"
+        :alt="content.imageAlt"
       />
       <p class="content__text">{{ content.text }}</p>
       <p class="content__record">{{ content.record }}</p>

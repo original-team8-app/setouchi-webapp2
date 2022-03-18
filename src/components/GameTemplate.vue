@@ -1,46 +1,40 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
-  <div class="label__canvas">- キャンバス</div>
-  <div class="label__sample">- 完成例</div>
+  <div class="label__canvas">{{ labels.canvasLabel }}</div>
+  <div class="label__sample">{{ labels.sampleLabel }}</div>
   <div>
     <div class="back" v-html="passContentCode"></div>
     <div
       class="sample__back sample__opacity"
       v-html="passSampleCode"
-      v-bind:style="{ opacity: opacityValue }"
+      :style="{ opacity: opacityValue }"
     ></div>
   </div>
   <div>
     <div class="sample__back" v-html="passSampleCode"></div>
   </div>
   <div class="opacity-bar">
-    透過度:
+    {{ labels.opacityLabel }}
     <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
   </div>
   <div class="how-to__wrapper">
-    <p class="how-to__title">遊び方</p>
+    <p class="how-to__title">{{ howToTitle }}</p>
     <ol class="how-to__text">
-      <li>html,cssを記述して「完成例」イメージを作成しよう!</li>
-      <li>エディタに記述したコードは「キャンバス」に反映されるよ!</li>
-      <li>正解は1つとは限らないよ! 色々な方法を模索してみよう!</li>
-      <li>
-        「完成!」ボタンを押して終了！
-        その時点のコードとキャンバスが保存されるよ!
+      <li v-for="howToText in howToTexts" :key="howToText.index">
+        {{ howToText }}
       </li>
     </ol>
-    <p class="how-to__hint">
-      Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...
-    </p>
+    <p class="how-to__hint">{{ howToHint }}</p>
   </div>
   <div class="color-palette">
     <div
       class="color-list"
       v-for="passColorCode in passColorCodes"
-      v-bind:key="passColorCode.index"
+      :key="passColorCode.index"
     >
       <div
         class="color-checker"
-        v-bind:style="{
+        :style="{
           backgroundColor: passColorCode,
         }"
       ></div>
@@ -63,6 +57,19 @@ export default {
   data() {
     return {
       opacityValue: 0,
+      labels: {
+        canvasLabel: "- キャンバス",
+        sampleLabel: "- 完成例",
+        opacityLabel: "透過度: ",
+      },
+      howToTitle: "遊び方",
+      howToTexts: [
+        "html,cssを記述して「完成例」イメージを作成しよう!",
+        "エディタに記述したコードは「キャンバス」に反映されるよ!",
+        "正解は1つとは限らないよ! 色々な方法を模索してみよう!",
+        "「完成!」ボタンを押して終了！ その時点のコードとキャンバスが保存されるよ!",
+      ],
+      howToHint: "Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...",
     }
   },
 }
