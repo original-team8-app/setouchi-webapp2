@@ -42,11 +42,16 @@
     </div>
   </div>
   <router-link to="/feedback">
-    <button class="finish-button">{{ finishButtonText }}</button>
+    <button class="finish-button" @click="saveContentCode">
+      {{ finishButtonText }}
+    </button>
   </router-link>
 </template>
 
 <script>
+import { collection, addDoc } from "firebase/firestore"
+import { db } from "../firebase"
+
 export default {
   props: {
     passTitle: String,
@@ -72,6 +77,13 @@ export default {
       howToHint: "Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...",
       finishButtonText: "完成！",
     }
+  },
+  methods: {
+    saveContentCode() {
+      addDoc(collection(db, "contents"), {
+        contentCode: this.passContentCode,
+      })
+    },
   },
 }
 </script>
