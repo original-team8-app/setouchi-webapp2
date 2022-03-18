@@ -42,14 +42,14 @@
     </div>
   </div>
   <router-link to="/feedback">
-    <button class="finish-button" @click="saveContentCode">
+    <button class="finish-button" @click="updateSavedContentCode">
       {{ finishButtonText }}
     </button>
   </router-link>
 </template>
 
 <script>
-import { collection, addDoc } from "firebase/firestore"
+import { doc, setDoc } from "firebase/firestore"
 import { db } from "../firebase"
 
 export default {
@@ -79,8 +79,8 @@ export default {
     }
   },
   methods: {
-    saveContentCode() {
-      addDoc(collection(db, "contents"), {
+    updateSavedContentCode() {
+      setDoc(doc(db, "contents", this.passTitle), {
         contentCode: this.passContentCode,
       })
     },

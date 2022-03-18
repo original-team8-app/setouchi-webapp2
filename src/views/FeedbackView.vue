@@ -1,37 +1,14 @@
 <template>
-  <div v-for="content in contents" :key="content.id">
-    <div>
-      <div class="back" v-html="content.contentCode"></div>
-    </div>
+  <div>
+    <div class="back"></div>
   </div>
 </template>
 
-<script>
-import { collection, getDocs } from "firebase/firestore"
-import { db } from "../firebase"
-
-export default {
-  data() {
-    return {
-      contents: [],
-    }
-  },
-  created() {
-    getDocs(collection(db, "contents")).then((snapshot) => {
-      snapshot.forEach((doc) => {
-        this.contents.push({
-          id: doc.id,
-          ...doc.data(),
-        })
-      })
-    })
-  },
-}
-</script>
+<script></script>
 
 <style scoped>
 .back {
-  position: relative;
+  position: absolute;
   top: 25vh;
   left: 80vh;
   height: 300px;
