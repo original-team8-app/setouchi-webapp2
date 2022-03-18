@@ -1,12 +1,10 @@
 <template>
   <div class="title__container">
-    <h2 class="title__logo">CSS Park</h2>
-    <p class="title__text">
-      -コードを書いて例題のイメージに近づけよう！( 全12ステージ )
-    </p>
+    <h2 class="title__logo">{{ title.logo }}</h2>
+    <p class="title__text">{{ title.text }}</p>
   </div>
   <div class="content__wrapper">
-    <span class="content__title">Contents Lv.1~8</span>
+    <span class="content__title">{{ contentTitle }}</span>
     <router-link
       class="content__container"
       v-for="content in contents"
@@ -28,6 +26,11 @@
 export default {
   data() {
     return {
+      title: {
+        logo: "CSS Park",
+        text: "-コードを書いて例題のイメージに近づけよう！( 全12ステージ )",
+      },
+      contentTitle: "Contents Lv.1~8",
       contents: [
         {
           path: "/Lv1_Leaf",
