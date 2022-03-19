@@ -1,4 +1,5 @@
 <template>
+  <div class="title">{{ title }}</div>
   <div>
     <div class="back" v-html="deliveryData"></div>
   </div>
@@ -8,12 +9,17 @@
 export default {
   props: ["deliveryData"],
   data() {
-    return {}
+    return {
+      title: "お疲れさまでした！",
+    }
   },
 }
 </script>
 
 <style scoped>
+.title {
+  font-size: 2rem;
+}
 .back {
   position: absolute;
   top: 25vh;

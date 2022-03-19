@@ -10,6 +10,7 @@ import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 import Lv7_Diamond from "../views/Lv7_Diamond.vue"
 import Lv8_Star from "../views/Lv8_Star.vue"
 import FeedbackView from "../views/FeedbackView.vue"
+import RecordView from "../views/RecordView.vue"
 
 const routes = [
   {
@@ -76,6 +77,11 @@ const routes = [
     name: "feedback",
     component: FeedbackView,
     props: true,
+  },
+  {
+    path: "/record",
+    name: "record",
+    component: RecordView,
   },
 ]
 

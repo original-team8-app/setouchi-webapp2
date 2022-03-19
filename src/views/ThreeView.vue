@@ -5,20 +5,21 @@
   </div>
   <div class="content__wrapper">
     <span class="content__title">{{ contentTitle }}</span>
-    <router-link
+    <div
       class="content__container"
       v-for="content in contents"
       :key="content.index"
-      :to="content.path"
     >
-      <img
-        class="content__img"
-        :src="content.imagePath"
-        :alt="content.imageAlt"
-      />
-      <p class="content__text">{{ content.text }}</p>
-      <p class="content__record">{{ content.record }}</p>
-    </router-link>
+      <router-link :to="content.path">
+        <img
+          class="content__img"
+          :src="content.imagePath"
+          :alt="content.imageAlt"
+        />
+        <p class="content__text">{{ content.text }}</p>
+      </router-link>
+      <a class="content__record" href="/record">{{ recordText }}</a>
+    </div>
   </div>
 </template>
 
@@ -31,62 +32,55 @@ export default {
         text: "-コードを書いて例題のイメージに近づけよう！( 全12ステージ )",
       },
       contentTitle: "Contents Lv.1~8",
+      recordText: "前回の記録",
       contents: [
         {
           path: "/Lv1_Leaf",
           imagePath: require("@/assets/LeafImg.jpg"),
           imageAlt: "レベル1「Leaf」です。",
           text: "Leaf",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv2_Cylinder",
           imagePath: require("@/assets/SylinderImg.jpg"),
           imageAlt: "レベル2「Cylinder」です。",
           text: "Cylinder",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv3_CancelButton",
           imagePath: require("@/assets/CancelButtonImg.jpg"),
           imageAlt: "レベル3「Cancel Button」です。",
           text: "Cancel Button",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv4_UnknownIcon",
           imagePath: require("@/assets/UnknownIconImg.jpg"),
           imageAlt: "レベル4「Unknown Icon」です。",
           text: "Unknown Icon",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv5_Triangle",
           imagePath: require("@/assets/TriangleImg.jpg"),
           imageAlt: "レベル5「Triangle」です。",
           text: "Triangle",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv6_Infinity",
           imagePath: require("@/assets/InfinityImg.jpg"),
           imageAlt: "レベル6「Infinity」です。",
           text: "Infinity",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv7_Diamond",
           imagePath: require("@/assets/DiamondImg.jpg"),
           imageAlt: "レベル7「Diamond」です。",
           text: "Diamond",
-          record: "前回の記録:〇分〇〇秒",
         },
         {
           path: "/Lv8_Star",
           imagePath: require("@/assets/StarImg.jpg"),
           imageAlt: "レベル8「Star」です。",
           text: "Star",
-          record: "前回の記録:〇分〇〇秒",
         },
       ],
     }
@@ -138,26 +132,33 @@ html {
 .content__container {
   border: 1px solid black;
   margin: 30px 30px;
-  padding: 5px;
   border-radius: 5px;
-  text-decoration: none;
   opacity: 0.9;
   transition: all 0.3s;
-}
-a {
-  color: black;
 }
 .content__container:hover {
   opacity: 1;
   transform: scale(1.05, 1.05);
 }
+.content__container * {
+  color: black;
+  text-decoration: none;
+}
 .content__img {
   border: 1px solid black;
   border-radius: 5px;
+  margin: 5px 5px 0 5px;
   width: 250px;
 }
 .content__text {
   font-weight: bold;
   font-size: 1.5rem;
+  margin: 0;
+  padding: 20px 0 20px 0;
+}
+.content__record {
+  display: block;
+  padding-bottom: 16px;
+  text-decoration: underline;
 }
 </style>
