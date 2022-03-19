@@ -82,6 +82,7 @@ const routes = [
     path: "/record",
     name: "record",
     component: RecordView,
+    props: true,
   },
 ]
 

@@ -18,7 +18,9 @@
         />
         <p class="content__text">{{ content.text }}</p>
       </router-link>
-      <a class="content__record" href="/record">{{ recordText }}</a>
+      <button class="content__record" @click="toRecord(content.docName)">
+        {{ recordText }}
+      </button>
     </div>
   </div>
 </template>
@@ -39,51 +41,64 @@ export default {
           imagePath: require("@/assets/LeafImg.jpg"),
           imageAlt: "レベル1「Leaf」です。",
           text: "Leaf",
+          docName: "Lv.1 Leaf",
         },
         {
           path: "/Lv2_Cylinder",
           imagePath: require("@/assets/SylinderImg.jpg"),
           imageAlt: "レベル2「Cylinder」です。",
           text: "Cylinder",
+          docName: "Lv.2 Cylinder",
         },
         {
           path: "/Lv3_CancelButton",
           imagePath: require("@/assets/CancelButtonImg.jpg"),
           imageAlt: "レベル3「Cancel Button」です。",
           text: "Cancel Button",
+          docName: "Lv.3 Cancel Button",
         },
         {
           path: "/Lv4_UnknownIcon",
           imagePath: require("@/assets/UnknownIconImg.jpg"),
           imageAlt: "レベル4「Unknown Icon」です。",
           text: "Unknown Icon",
+          docName: "Lv.4 Unknown Icon",
         },
         {
           path: "/Lv5_Triangle",
           imagePath: require("@/assets/TriangleImg.jpg"),
           imageAlt: "レベル5「Triangle」です。",
           text: "Triangle",
+          docName: "Lv.5 Triangle",
         },
         {
           path: "/Lv6_Infinity",
           imagePath: require("@/assets/InfinityImg.jpg"),
           imageAlt: "レベル6「Infinity」です。",
           text: "Infinity",
+          docName: "Lv.6 Infinity",
         },
         {
           path: "/Lv7_Diamond",
           imagePath: require("@/assets/DiamondImg.jpg"),
           imageAlt: "レベル7「Diamond」です。",
           text: "Diamond",
+          docName: "Lv.7 Diamond",
         },
         {
           path: "/Lv8_Star",
           imagePath: require("@/assets/StarImg.jpg"),
           imageAlt: "レベル8「Star」です。",
           text: "Star",
+          docName: "Lv.8 Star",
         },
       ],
     }
+  },
+  methods: {
+    toRecord(name) {
+      this.$router.push({ name: "record", params: { deliveryDocName: name } })
+    },
   },
 }
 </script>
@@ -162,6 +177,10 @@ html {
   position: absolute;
   bottom: 4%;
   transform: translate(-50%, 0);
+  border: none;
+  background-color: #faffff;
+  font-size: 1rem;
+  color: #696969;
 }
 .content__record:hover {
   font-weight: bold;
