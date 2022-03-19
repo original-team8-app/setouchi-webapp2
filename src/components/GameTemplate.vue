@@ -151,13 +151,17 @@ html {
 .how-to__wrapper {
   background-color: rgb(230, 227, 227);
   width: 420px;
-  height: 165px;
-  /* opacity: 0.5; */
+  height: 220px;
   position: absolute;
-  top: 77vh;
+  top: 80vh;
   left: 75vh;
   overflow-y: scroll;
+  /* opacity: 0.5;
+  transition: all 0.3s; */
 }
+/* .how-to__wrapper:hover {
+  opacity: 1;
+} */
 .how-to__title {
   font-size: 1.5rem;
 }
@@ -200,10 +204,10 @@ html {
 }
 .finish-button {
   position: absolute;
-  top: 90vh;
+  top: 95vh;
   left: 150vh;
   height: 60px;
-  width: 150px;
+  width: 160px;
   font-size: 1.5rem;
 }
 </style>
