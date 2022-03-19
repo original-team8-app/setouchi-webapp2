@@ -135,6 +135,7 @@ html {
   border-radius: 5px;
   opacity: 0.9;
   transition: all 0.3s;
+  position: relative;
 }
 .content__container:hover {
   opacity: 1;
@@ -154,11 +155,15 @@ html {
   font-weight: bold;
   font-size: 1.5rem;
   margin: 0;
-  padding: 20px 0 20px 0;
+  padding: 20px 0 60px 0;
 }
 .content__record {
-  display: block;
-  padding-bottom: 16px;
   text-decoration: underline;
+  position: absolute;
+  bottom: 4%;
+  transform: translate(-50%, 0);
+}
+.content__record:hover {
+  font-weight: bold;
 }
 </style>
