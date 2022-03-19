@@ -5,6 +5,7 @@
     <router-link to="/three">three</router-link>
   </nav> -->
   <router-view />
+  <!-- <CSSQuizeTemplate /> -->
 </template>
 
 <style>

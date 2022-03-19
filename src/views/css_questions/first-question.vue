@@ -2,43 +2,22 @@
   <head>
     <meta charset="UTF-8" />
   </head>
-  <div class="first-question">
-    <h1>第1問</h1>
-    <div class="questionArea">
-      <div
-        :style="{
-          backgroundImage: `url(${require('@/assets/img/rpg_field_map_grass.png')})`,
-        }"
-        class="cssArea"
-      >
-        <div class="rightSide">
-          <img
-            class="carIcon"
-            v-bind:src="require('@/assets/img/carIcon9.png')"
-          />
-        </div>
-        <img
-          class="goalIcon"
-          v-bind:src="require('@/assets/img/goalflag.png')"
-        />
-        <img class="roadIcon" v-bind:src="require('@/assets/img/road.png')" />
-        <img class="roadIcon" v-bind:src="require('@/assets/img/road.png')" />
+  <div class="onePage">
+    <CSSQuizeTemplate :passTitle="title" :passContentCode="contentCode" />
+    <h2></h2>
+    <div class="rightHand">
+      <h1>Lesson1</h1>
+      <div class="editingSpace">
+        <h2>CSSで記述しよう！</h2>
+        <p>CSSの表現を使い道路を配置して車を目的地へ導きましょう！</p>
       </div>
-      <div id="CssEditor">
-        <div>
-          <h2>CSSで記述しよう！</h2>
-          <p>CSSの表現を使い道路を配置して車を目的地へ導きましょう！</p>
-        </div>
-        <v-ace-editor
-          v-model:value="content"
-          @init="editorInit"
-          lang="html"
-          theme="chrome"
-          style="height: 300px"
-        />
-        <button>ヒント💡</button>
-        <button>完成！</button>
-      </div>
+      <v-ace-editor
+        v-model:value="contentCode"
+        @init="editorInit"
+        lang="html"
+        theme="chrome"
+        style="height: 300px"
+      />
     </div>
   </div>
 </template>
@@ -47,63 +26,30 @@
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
 import "ace-builds/src-noconflict/theme-monokai"
+import CSSQuizeTemplate from "@/components/CSSQuizeTemplate.vue"
 export default {
   components: {
+    // eslint-disable-next-line vue/no-unused-components
     VAceEditor,
+    CSSQuizeTemplate,
   },
   data() {
     return {
-      title: "Lv.2 Cylinder",
+      title: "Lesson1",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      sampleCode: `<div class="sample__object"></div>
+      contentCode: `<div class="object">
+      <img class="roadItem" v-bind:src="require('@/assets/img/road.png')" />
+</div>
 
 <style>
-      .sample__object {
-        width: 100px;
-        height: 150px;
-        background-color: #40e0d0;
-        position: absolute;
-        top: 50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-      }
-
-      .sample__object::before {
-        content: "";
-        width: 100px;
-        height: 50px;
-        background-color: #20b2aa;
-        position: absolute;
-        top: -30px;
-        left: 0;
-        border-radius: 45%;
-      }
-
-      .sample__object::after {
-        content: "";
-        width: 100px;
-        height: 50px;
-        background-color: #40e0d0;
-        position: absolute;
-        top: 120px;
-        left: 0;
-        border-radius: 45%;
-      }
-      .sample__back{
-        background-color:#fffaf0;
-      }
-    </style>`,
-      contentCode: `<div class="object"></div>
-
-<style>
-  .object{
+  .roadItem{
     width: 150px;
     height: 150px;
-    background-color: #40e0d0;
     /*ここにコードを追加*/
   }
-  .back{
-    
+
+  .createspace{
+
   }
 </style>`,
     }
@@ -112,43 +58,15 @@ export default {
 </script>
 
 <style scoped>
-.questionArea {
+.codeArea {
+  width: 50%;
+}
+
+.onePage {
   display: flex;
   justify-content: space-around;
-}
-
-.writtenCode {
-  width: 400px;
-  height: 300px;
-}
-
-.cssArea {
-  width: 700px;
-  height: 600px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.carIcon {
-  display: flex;
-  align-items: flex-end;
-  width: 85%;
-  height: 30%;
-}
-
-.goalIcon {
-  width: 15%;
-  height: 20%;
-}
-
-.rightSide {
-  display: flex;
-  align-items: end;
-}
-
-.roadIcon {
+  width: 100%;
   height: 50%;
-  width: 10%;
 }
 </style>
 
