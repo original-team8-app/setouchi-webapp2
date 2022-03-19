@@ -86,7 +86,7 @@ export default {
 
 <style scoped>
 .edit-area {
-  height: 95vh;
+  height: 90vh;
   width: 70vh;
   font-size: 1rem;
   outline: auto;
