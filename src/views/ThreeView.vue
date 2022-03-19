@@ -183,6 +183,6 @@ html {
   color: #696969;
 }
 .content__record:hover {
-  font-weight: bold;
+  color: black;
 }
 </style>
