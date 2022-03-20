@@ -103,6 +103,12 @@ export default {
   background: #f4f4f4; /*背景色*/
   border-left: solid 5px #7db4e6; /*左線*/
   border-bottom: solid 3px #d7d7d7; /*下線*/
+  transition-duration: 0.5s;
+}
+
+.menue__card:hover {
+  transform: scale(0.9, 0.9); /*画像の拡大*/
+  cursor: pointer; /*カーソルをポインターにする*/
 }
 
 .iconArea {
