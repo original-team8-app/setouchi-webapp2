@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
-import firstQuestion from "../views/css_questions/first-question.vue"
+import firstQuestion from "../views/css_questions/first_question.vue"
 
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"

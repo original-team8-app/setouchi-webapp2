@@ -9,7 +9,7 @@
       <h1>Lesson1</h1>
       <div class="editingSpace">
         <h2>CSSで記述しよう！</h2>
-        <p>CSSの表現を使い道路を配置して車を目的地へ導きましょう！</p>
+        <p>CSSの表現を使い建物を配置して街を作りましょう！</p>
       </div>
       <v-ace-editor
         v-model:value="contentCode"
@@ -37,20 +37,14 @@ export default {
     return {
       title: "Lesson1",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      contentCode: `<div class="object">
-      <img class="roadItem" v-bind:src="require('@/assets/img/road.png')" />
-</div>
-
+      contentCode: `
 <style>
-  .roadItem{
-    width: 150px;
-    height: 150px;
+  #buildingField{
+    width: 100%;
+    height: 100%;
     /*ここにコードを追加*/
   }
 
-  .createspace{
-
-  }
 </style>`,
     }
   },

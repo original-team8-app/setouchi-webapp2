@@ -22,7 +22,20 @@
   </div>
 
   <div>
-    <button @click="jumpToQ1" class="startbutton">ゲームを始める</button>
+    <button @click="jumpToQ1" class="startbutton">最初から始める</button>
+  </div>
+
+  <div class="cardList">
+    <v-col v-for="menue in menueList" v-bind:key="menue.id">
+      <v-card>
+        <!-- {{ menue.title }}
+        {{ menue.text }}
+        <router-link
+          v-bind:key="menue.index"
+          v-bind:to="menue.path"
+        ></router-link> -->
+      </v-card>
+    </v-col>
   </div>
 </template>
 <script>
@@ -31,6 +44,11 @@ export default {
     jumpToQ1: function () {
       this.$router.push("/css_questions/first-question")
     },
+  },
+  menueList: {
+    title: "Lesson1",
+    path: "/css_questions/first_question.vue",
+    text: "CSSを使い道路を配置しよう！",
   },
 }
 </script>
@@ -69,5 +87,10 @@ export default {
   border-bottom: 4px solid hsl(241, 3%, 73%);
   border-top: 0px;
   transition: all 0.1s ease-in-out;
+}
+
+.cardList {
+  width: 100%;
+  height: 70%;
 }
 </style>
