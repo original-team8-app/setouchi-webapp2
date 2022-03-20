@@ -37,7 +37,7 @@ export default {
     return {
       title: "Lesson1",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      contentCode: `
+      contentCode: `<div>     <img src="../assets/img/building-12.png" class="convenenceStore" /></div>
 <style>
   #buildingField{
     width: 100%;
