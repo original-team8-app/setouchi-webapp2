@@ -24,6 +24,19 @@
   <div>
     <button @click="jumpToQ1" class="startbutton">ゲームを始める</button>
   </div>
+
+  <section id="menueArea">
+    <v-sheet
+      color="white"
+      elevation="1"
+      height="100"
+      outlined
+      rounded
+      shaped
+      width="100"
+      >カード</v-sheet
+    >
+  </section>
 </template>
 <script>
 export default {
