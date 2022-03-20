@@ -1,5 +1,11 @@
 <template>
   <v-app>
+    <section>
+      <img
+        class="carIcon"
+        v-bind:src="require('@/assets/img/Image_town-illust_10-1024x206.png')"
+      />
+    </section>
     <div id="about">
       <h1>CSSの使い方を覚えよう！</h1>
     </div>
@@ -11,33 +17,33 @@
     <div class="iconArea"></div>
 
     <div>
-      <button @click="jumpToQ1" class="startbutton">ゲームを始める</button>
+      <button @click="jumpToQ1" class="startbutton">最初から始める！</button>
     </div>
 
-    <ul id="menueArea">
-      <!-- <div class="content__wrapper"> -->
-      <!-- <router-link
-          class="content__container"
-          v-for="menue in menueData"
-          v-bind:key="menue.index"
-          v-bind:to="menue.path"
-        >
-          <img
-            class="content__img"
-            v-bind:src="content.imagePath"
-            v-bind:alt="content.imageAlt"
-          />
-          <p class="content__text">{{ content.text }}</p>
-          <p class="content__record">{{ content.record }}</p>
-        </router-link> -->
-      <li v-for="menue in menueData" v-bind:key="menue.title">
+    <div id="card__list">
+      <router-link
+        to="/first-question.vue"
+        v-for="menue in menueData"
+        v-bind:key="menue.title"
+        class="menue__card"
+      >
+        <div></div>
+        <h2>{{ menue.title }}</h2>
+        <p class="lessonIntro">{{ menue.text }}</p>
+      </router-link>
+    </div>
+    <!-- <li >
         {{ menue.title }}, {{ menue.text }}
-      </li>
-    </ul>
+      </li> -->
   </v-app>
 </template>
 <script>
 export default {
+  methods: {
+    jumpToQ1: function () {
+      this.$router.push("/css_questions/first-question")
+    },
+  },
   data: function () {
     return {
       menueData: [
@@ -51,6 +57,24 @@ export default {
           title: "Lesson2",
           text: "flex-boxを使ってみよう！",
         },
+
+        {
+          title: "Lesson3",
+          path: "/css_questions/first-question.vue",
+          text: "flex-boxを応用してみよう！(2)",
+        },
+
+        {
+          title: "Lesson4",
+          path: "/css_questions/first-question.vue",
+          text: "flex-boxを応用してみよう！(3)",
+        },
+
+        {
+          title: "Lesson5",
+          path: "/css_questions/first-question.vue",
+          text: "CSSを記述してみましょう！",
+        },
       ],
     }
   },
@@ -61,21 +85,24 @@ export default {
 .about {
   background-color: green;
 }
-/* 
-.carIcon {
-  width: 50%;
-  height: 90%;
-}
 
-.goalIcon {
-  width: 40%;
-  height: 60%;
-} */
-#menueArea {
-  height: 300px;
+#card__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 80px;
 }
-.card {
-  margin-bottom: 5px;
+.menue__card {
+  width: 80%;
+  border: 1px solid black;
+  margin: 0 40px 30px 0;
+  padding: 5px;
+  text-decoration: none;
+  padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
+  color: #494949; /*文字色*/
+  background: #f4f4f4; /*背景色*/
+  border-left: solid 5px #7db4e6; /*左線*/
+  border-bottom: solid 3px #d7d7d7; /*下線*/
 }
 
 .iconArea {
