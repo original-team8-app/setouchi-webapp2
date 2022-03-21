@@ -3,18 +3,33 @@
     <meta charset="UTF-8" />
   </head>
   <div class="onePage">
-    <CSSQuizeTemplate :passTitle="title" :passContentCode="contentCode" />
+    <div class="leftHand">
+      <div
+        :style="{
+          backgroundImage: `url(${require('@/assets/rpg_field_map_grass.png')})`,
+        }"
+        class="screen"
+      >
+        <div class="buildingField" v-bind:style="contentCode">
+          <img src="/img/building-05.png" class="build1" />
+          <img src="/img/building-01.png" class="build2" />
+        </div>
+      </div>
+    </div>
+    <div class="runningButton">
+      <button>ヒント💡</button>
+      <button>完成！</button>
+    </div>
     <h2></h2>
     <div class="rightHand">
       <h1>Lesson1</h1>
-      <div class="editingSpace">
-        <h2>CSSで記述しよう！</h2>
-        <p>CSSの表現を使い建物を配置して街を作りましょう！</p>
-      </div>
+      <h2>CSSで記述しよう！</h2>
+      <p>CSSの表現を使い建物を配置して街を作りましょう！</p>
+
       <v-ace-editor
         v-model:value="contentCode"
         @init="editorInit"
-        lang="html"
+        lang="css"
         theme="chrome"
         style="height: 300px"
       />
@@ -26,20 +41,22 @@
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
 import "ace-builds/src-noconflict/theme-monokai"
-import CSSQuizeTemplate from "@/components/CSSQuizeTemplate.vue"
+// import CSSQuizeTemplate from "@/components/CSSQuizeTemplate.vue"
 export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
     VAceEditor,
-    CSSQuizeTemplate,
+    // CSSQuizeTemplate,
+  },
+  methods: {
+    editorInit: function () {},
   },
   data() {
     return {
       title: "Lesson1",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      contentCode: `<div>     <img src="../assets/img/building-12.png" class="convenenceStore" /></div>
-<style>
-  #buildingField{
+      contentCode: ` <style>
+  .buildingField{
     width: 100%;
     height: 100%;
     /*ここにコードを追加*/
@@ -61,6 +78,32 @@ export default {
   justify-content: space-around;
   width: 100%;
   height: 50%;
+}
+
+.screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: row;
+}
+
+.leftHand {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 50vw;
+}
+
+.build1 {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+}
+
+.build2 {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
 }
 </style>
 

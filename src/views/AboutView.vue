@@ -9,17 +9,7 @@
       CSSでレイアウトを変更し、道路を作って左画面にある車を目的地に到着させましょう！
     </p>
   </div>
-  <div class="iconArea">
-    <div>
-      <img src="../assets/img/carIcon9.png" alt="Logo" class="carIcon" />
-    </div>
-    <div>
-      <img src="../assets/img/arrow.png" alt="Logo" class="arrowIcon" />
-    </div>
-    <div>
-      <img src="../assets/img/goalflag.png" alt="Logo" class="goalIcon" />
-    </div>
-  </div>
+  <div class="iconArea"></div>
 
   <div>
     <button @click="jumpToQ1" class="startbutton">最初から始める</button>
