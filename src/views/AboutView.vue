@@ -98,16 +98,16 @@ export default {
   margin: 0 40px 30px 0;
   padding: 5px;
   text-decoration: none;
-  padding: 0.4em 0.5em; /*文字の上下 左右の余白*/
-  color: #494949; /*文字色*/
-  background: #f4f4f4; /*背景色*/
-  border-left: solid 5px #7db4e6; /*左線*/
-  border-bottom: solid 3px #d7d7d7; /*下線*/
+  padding: 0.4em 0.5em;
+  color: #494949;
+  background: #f4f4f4;
+  border-left: solid 5px #7db4e6;
+  border-bottom: solid 3px #d7d7d7;
   transition-duration: 0.5s;
 }
 
 .menue__card:hover {
-  transform: scale(0.9, 0.9); /*画像の拡大*/
+  transform: scale(0.95, 0.95); /*画像の拡大*/
   cursor: pointer; /*カーソルをポインターにする*/
 }
 
