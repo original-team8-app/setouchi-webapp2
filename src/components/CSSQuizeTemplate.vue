@@ -9,9 +9,7 @@
       }"
       class="screen"
     >
-      <img class="carIcon" v-bind:src="require('@/assets/img/carIcon9.png')" />
       <div class="createspace" v-html="passContentCode"></div>
-      <img class="goalFlag" v-bind:src="require('@/assets/img/goalflag.png')" />
     </div>
 
     <!-- <img class="roadItem" v-bind:src="require('@/assets/img/road.png')" />
