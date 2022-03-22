@@ -14,7 +14,7 @@
     <div class="back" v-html="recordData.contentCode"></div>
   </div>
   <router-link to="/three">
-    <button class="finish-button">ステージ選択画面へ</button>
+    <button class="finish-button">{{ buttonText }}</button>
   </router-link>
 </template>
 
@@ -37,6 +37,7 @@ export default {
         text: "",
       },
       contentTitle: "前回の記録",
+      buttonText: "ステージ選択画面へ",
       recordData: {},
     }
   },

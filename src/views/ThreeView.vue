@@ -4,7 +4,7 @@
     <p class="title__text">{{ title.text }}</p>
   </div>
   <div class="content__wrapper">
-    <span class="content__title">{{ contentTitle }}</span>
+    <span class="content__title">{{ contentTitle.normal }}</span>
     <div
       class="content__container"
       v-for="content in contents"
@@ -23,6 +23,26 @@
       </button>
     </div>
   </div>
+  <div class="content__wrapper">
+    <span class="content__title">{{ contentTitle.extra }}</span>
+    <div
+      class="content__container"
+      v-for="exContent in exContents"
+      :key="exContent.index"
+    >
+      <router-link :to="exContent.path">
+        <img
+          class="content__img"
+          :src="exContent.imagePath"
+          :alt="exContent.imageAlt"
+        />
+        <p class="content__text">{{ exContent.text }}</p>
+      </router-link>
+      <button class="content__record" @click="toRecord(exContent.docName)">
+        {{ recordText }}
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -33,7 +53,10 @@ export default {
         logo: "CSS Park",
         text: "-コードを書いて例題のイメージに近づけよう！( 全12ステージ )",
       },
-      contentTitle: "Contents Lv.1~8",
+      contentTitle: {
+        normal: "Contents Lv.1~8",
+        extra: "Contents Extra",
+      },
       recordText: "前回の記録",
       contents: [
         {
@@ -93,6 +116,7 @@ export default {
           docName: "Lv.8 Star",
         },
       ],
+      // exContents: [{}],
     }
   },
   methods: {

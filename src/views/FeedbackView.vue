@@ -14,7 +14,7 @@
     <div class="back" v-html="deliveryData"></div>
   </div>
   <router-link to="/three">
-    <button class="finish-button">ステージ選択画面へ</button>
+    <button class="finish-button">{{ buttonText }}</button>
   </router-link>
 </template>
 
@@ -30,10 +30,11 @@ export default {
   data() {
     return {
       title: {
-        logo: "お疲れさまでした！",
+        logo: "完成！お疲れさまでした！",
         text: "他のステージにも挑戦してみてね！",
       },
       contentTitle: "今回の記録",
+      buttonText: "ステージ選択画面へ",
     }
   },
 }
