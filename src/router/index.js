@@ -11,6 +11,7 @@ import Lv7_Diamond from "../views/Lv7_Diamond.vue"
 import Lv8_Star from "../views/Lv8_Star.vue"
 import Ex_MonsterBall from "../views/Ex_MonsterBall.vue"
 import Ex_Frog from "../views/Ex_Frog.vue"
+import Ex_Guitar from "../views/Ex_Guitar.vue"
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
 
@@ -83,6 +84,11 @@ const routes = [
     path: "/Ex_Frog",
     name: "Ex_Frog",
     component: Ex_Frog,
+  },
+  {
+    path: "/Ex_Guitar",
+    name: "Ex_Guitar",
+    component: Ex_Guitar,
   },
   {
     path: "/feedback",
