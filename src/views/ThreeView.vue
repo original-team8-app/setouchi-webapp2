@@ -124,6 +124,13 @@ export default {
           text: "Monster Ball",
           docName: "Ex. Monster Ball",
         },
+        {
+          path: "/Ex_Frog",
+          imagePath: require("@/assets/FrogImg.jpg"),
+          imageAlt: "エクストラステージ「Frog」です。",
+          text: "Frog",
+          docName: "Ex. Frog",
+        },
       ],
     }
   },
