@@ -139,7 +139,7 @@ html {
 .content__title {
   font-size: 2rem;
   position: absolute;
-  top: -2%;
+  top: -1.3rem;
   left: 3%;
   background-color: #faffff;
   padding: 0 1rem 0 1rem;
