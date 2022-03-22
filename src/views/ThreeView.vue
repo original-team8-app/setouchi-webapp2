@@ -138,6 +138,13 @@ export default {
           text: "Guitar",
           docName: "Ex. Guitar",
         },
+        {
+          path: "/Ex_Gift",
+          imagePath: require("@/assets/GiftImg.jpg"),
+          imageAlt: "エクストラステージ「Gift」です。",
+          text: "Gift",
+          docName: "Ex. Gift",
+        },
       ],
     }
   },
