@@ -116,7 +116,15 @@ export default {
           docName: "Lv.8 Star",
         },
       ],
-      // exContents: [{}],
+      exContents: [
+        {
+          path: "/Ex_MonsterBall",
+          imagePath: require("@/assets/MonsterBallImg.jpg"),
+          imageAlt: "エクストラステージ「Monster Ball」です。",
+          text: "Monster Ball",
+          docName: "Ex. Monster Ball",
+        },
+      ],
     }
   },
   methods: {

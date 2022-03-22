@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
+import FeedbackView from "../views/FeedbackView.vue"
+import RecordView from "../views/RecordView.vue"
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
@@ -9,8 +11,7 @@ import Lv5_Triangle from "../views/Lv5_Triangle.vue"
 import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 import Lv7_Diamond from "../views/Lv7_Diamond.vue"
 import Lv8_Star from "../views/Lv8_Star.vue"
-import FeedbackView from "../views/FeedbackView.vue"
-import RecordView from "../views/RecordView.vue"
+import Ex_MonsterBall from "../views/Ex_MonsterBall.vue"
 
 const routes = [
   {
@@ -71,6 +72,11 @@ const routes = [
     path: "/Lv8_Star",
     name: "Lv8_Star",
     component: Lv8_Star,
+  },
+  {
+    path: "/Ex_MonsterBall",
+    name: "Ex_MonsterBall",
+    component: Ex_MonsterBall,
   },
   {
     path: "/feedback",
