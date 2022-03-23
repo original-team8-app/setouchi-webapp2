@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
-import ThreeView from "../views/ThreeView.vue"
+import CSSPark from "../views/CSSPark.vue"
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
@@ -32,9 +32,9 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/three",
-    name: "three",
-    component: ThreeView,
+    path: "/css-park",
+    name: "css-park",
+    component: CSSPark,
   },
   {
     path: "/Lv1_Leaf",

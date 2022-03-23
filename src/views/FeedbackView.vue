@@ -13,7 +13,7 @@
     />
     <div class="back" v-html="deliveryData"></div>
   </div>
-  <router-link to="/three">
+  <router-link to="/css-park">
     <button class="finish-button">{{ buttonText }}</button>
   </router-link>
 </template>
