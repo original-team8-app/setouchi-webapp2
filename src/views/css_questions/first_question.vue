@@ -26,6 +26,7 @@
       <h2>CSSで記述しよう！</h2>
       <p>CSSの表現を使い建物を配置して街を作りましょう！</p>
 
+      <!-- <editorSpace /> -->
       <v-ace-editor
         v-model:value="contentCode"
         @init="editorInit"
@@ -39,14 +40,17 @@
 
 <script>
 import { VAceEditor } from "vue3-ace-editor"
+// import editorSpace from "./editorSpace"
 import "ace-builds/src-noconflict/mode-html"
 import "ace-builds/src-noconflict/theme-monokai"
+
 // import CSSQuizeTemplate from "@/components/CSSQuizeTemplate.vue"
 export default {
   components: {
     // eslint-disable-next-line vue/no-unused-components
     VAceEditor,
     // CSSQuizeTemplate,
+    // editorSpace,
   },
   methods: {
     editorInit: function () {},
@@ -55,7 +59,7 @@ export default {
     return {
       title: "Lesson1",
       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      contentCode: ` <style>
+      contentCode: ` <style> 
   .buildingField{
     width: 100%;
     height: 100%;
