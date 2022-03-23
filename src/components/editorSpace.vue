@@ -10,7 +10,7 @@
 
 <script>
 import { VAceEditor } from "vue3-ace-editor"
-import contentCode from "./ace_edtior.js"
+import contentCode from "../components/ace_edtior.js"
 export default {
   setup() {
     return { contentCode }
