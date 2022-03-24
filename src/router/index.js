@@ -2,8 +2,6 @@ import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import CSSPark from "../views/CSSPark.vue"
 import firstQuestion from "../views/css_questions/first_question.vue"
-
-
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
@@ -35,16 +33,14 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-
     path: "/css-park",
     name: "css-park",
     component: CSSPark,
-   },
+  },
   {
     path: "/css_questions/first-question",
     name: "firstQuestion",
     component: firstQuestion,
-
   },
   /* eslint-disable */
   {
@@ -78,7 +74,6 @@ const routes = [
     component: Lv6_Infinity,
   },
   {
-
     path: "/Lv7_Diamond",
     name: "Lv7_Diamond",
     component: Lv7_Diamond,
@@ -119,7 +114,6 @@ const routes = [
     name: "record",
     component: RecordView,
     props: true,
-
   },
 ]
 

@@ -4,9 +4,6 @@
     <router-link to="/about">About</router-link> |
 
     <router-link to="/css-park">css-park</router-link>
-
- 
-
   </nav>
   <router-view />
   <!-- <CSSQuizeTemplate /> -->
