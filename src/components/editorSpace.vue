@@ -10,23 +10,35 @@
 
 <script>
 import { VAceEditor } from "vue3-ace-editor"
+import { contentCode } from "./ace_edtior.js"
 export default {
+  setup() {
+    return { contentCode }
+  },
   methods: {
     editorInit: function () {},
   },
   components: {
     VAceEditor,
   },
-  data() {
-    return {
-      title: "Lesson1",
-      colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
-      contentCode: `
-    width: 100%;
-    height: 100%;
-    /*ここにコードを追加*/
-  `,
-    }
-  },
 }
+// export default {
+//   methods: {
+//     editorInit: function () {},
+//   },
+//   components: {
+//     VAceEditor,
+//   },
+//   data() {
+//     return {
+//       title: "Lesson1",
+//       colorCodes: ["#40e0d0", "#20b2aa", "#fffaf0"],
+//       contentCode: `
+//     width: 100%;
+//     height: 100%;
+//     /*ここにコードを追加*/
+//   `,
+//     }
+//   },
+// }
 </script>

@@ -1,14 +1,22 @@
 import { ref } from "vue"
 
 export default {
-  setup() {
-    const contentCode = ref(
-      `  width: 100%;
-               height: 100%;
-               /*ここにコードを追加*/`
-    )
-    return {
-      contentCode,
-    }
+  methods: {
+    editorInit: function () {},
   },
+  setup() {
+    const contentCode = ref(`
+    position: absolute;
+    right: 50px;
+    top: 100px;
+    
+`)
+    return contentCode
+  },
+  // data() {
+  //   return {
+  //     // eslint-disable-next-line
+  //     contentCode,
+  //   }
+  // },
 }
