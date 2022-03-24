@@ -28,9 +28,7 @@ export default {
       title: "Lv.4 Unknown Icon",
       colorCodes: ["#808080", "#f0f8ff"],
       sampleCode: `    <div class="sample__body"></div>
-    <div class="sample__neck"></div>
     <div class="sample__head"></div>
-
 
 <style>
       .sample__head {
@@ -40,18 +38,9 @@ export default {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -100%);
-        border-radius: 50px;
-      }
-      .sample__neck {
-        background-color: #f0f8ff;
-        width: 120px;
-        height: 120px;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -90%);
-        border-radius: 60px;
+        transform: translate(-50%, -80%);
+        border-radius: 50%;
+        border: 15px solid #f0f8ff;
       }
       .sample__body {
         background-color: #808080;
@@ -60,7 +49,7 @@ export default {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -10%);
+        transform: translate(-50%, 0);
         border-radius: 50% 50% 0 0;
       }
       .sample__back{
@@ -79,7 +68,8 @@ export default {
   .back{
     
   }
-</style>`,
+</style>
+`,
     }
   },
 }
@@ -87,11 +77,9 @@ export default {
 
 <style scoped>
 .edit-area {
-  height: 80vh;
+  height: 90vh;
   width: 70vh;
   font-size: 1rem;
   outline: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 </style>

@@ -2,7 +2,11 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
-    <router-link to="/three">three</router-link>
+
+    <router-link to="/css-park">css-park</router-link>
+
+ 
+
   </nav>
   <router-view />
   <!-- <CSSQuizeTemplate /> -->
@@ -17,6 +21,9 @@
   color: #2c3e50;
 }
 
+body {
+  margin: 0;
+}
 nav {
   padding: 30px;
 }

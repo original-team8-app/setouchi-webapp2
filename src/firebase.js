@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 
 const firebaseConfig = {
-  //...apiKey: "AIzaSyCwSc8wkBegdhVzxXgUJqGmnPuiQmGCUIM",
+  apiKey: "AIzaSyCwSc8wkBegdhVzxXgUJqGmnPuiQmGCUIM",
   authDomain: "setouchi-web-app.firebaseapp.com",
   projectId: "setouchi-web-app",
   storageBucket: "setouchi-web-app.appspot.com",
