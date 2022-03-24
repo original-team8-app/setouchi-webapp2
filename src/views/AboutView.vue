@@ -22,7 +22,7 @@
 
     <div id="card__list">
       <router-link
-        v-bind:to="menue.path"
+        to="/first-question.vue"
         v-for="menue in menueData"
         v-bind:key="menue.title"
         class="menue__card"
