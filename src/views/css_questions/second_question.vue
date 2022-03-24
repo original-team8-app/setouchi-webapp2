@@ -115,5 +115,3 @@ export default {
   width: 45%;
 }
 </style>
-
-<!-- @/assets/img/rpg_field_map_grass.png -->
