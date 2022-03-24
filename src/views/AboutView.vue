@@ -22,8 +22,8 @@
 
     <div id="card__list">
       <router-link
-        to="/first-question.vue"
         v-for="menue in menueData"
+        v-bind:to="menue.path"
         v-bind:key="menue.title"
         class="menue__card"
       >
@@ -41,7 +41,7 @@
 export default {
   methods: {
     jumpToQ1: function () {
-      this.$router.push("/css_questions/first-question")
+      this.$router.push("/css_questions/first_question")
     },
   },
   data: function () {
@@ -49,32 +49,32 @@ export default {
       menueData: [
         {
           title: "Lesson1",
-          path: "/css_questions/first-question.vue",
+          path: "/css_questions/first_question.vue",
           text: "CSSを記述してみましょう！",
         },
 
-        {
-          title: "Lesson2",
-          text: "flex-boxを使ってみよう！",
-        },
+        // {
+        //   title: "Lesson2",
+        //   text: "flex-boxを使ってみよう！",
+        // },
 
-        {
-          title: "Lesson3",
-          path: "/css_questions/first-question.vue",
-          text: "flex-boxを応用してみよう！(2)",
-        },
+        // {
+        //   title: "Lesson3",
+        //   path: "/css_questions/first-question.vue",
+        //   text: "flex-boxを応用してみよう！(2)",
+        // },
 
-        {
-          title: "Lesson4",
-          path: "/css_questions/first-question.vue",
-          text: "flex-boxを応用してみよう！(3)",
-        },
+        // {
+        //   title: "Lesson4",
+        //   path: "/css_questions/first-question.vue",
+        //   text: "flex-boxを応用してみよう！(3)",
+        // },
 
-        {
-          title: "Lesson5",
-          path: "/css_questions/first-question.vue",
-          text: "CSSを記述してみましょう！",
-        },
+        // {
+        //   title: "Lesson5",
+        //   path: "/css_questions/first-question.vue",
+        //   text: "CSSを記述してみましょう！",
+        // },
       ],
     }
   },

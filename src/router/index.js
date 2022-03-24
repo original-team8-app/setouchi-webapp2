@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
 import ThreeView from "../views/ThreeView.vue"
-import firstQuestion from "../views/css_questions/first_question.vue"
+
+import first_question from "../views/css_questions/first_question.vue"
 
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
@@ -26,9 +27,9 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/css_questions/first-question",
-    name: "firstQuestion",
-    component: firstQuestion,
+    path: "/first_question",
+    name: "first_question",
+    component: first_question,
   },
   /* eslint-disable */
   {
