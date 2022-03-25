@@ -44,7 +44,7 @@
 
     <div id="overlay" v-show="showContent">
       <div id="content">
-        <img src="/img/sample_firstQuestion.png" class="build1" />
+        <img src="/img/sample_firstQuestion.png" class="sample-img" />
         <p><button v-on:click="closeModal" class="d_button">閉じる</button></p>
       </div>
     </div>
@@ -154,6 +154,12 @@ export default {
   width: 50%;
   padding: 1em;
   background: #fff;
+}
+
+.sample-img {
+  object-fit: contain;
+  width: 80%;
+  height: 80%;
 }
 
 .runningButton {
