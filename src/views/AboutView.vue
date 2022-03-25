@@ -22,9 +22,9 @@
 
     <div id="card__list">
       <router-link
-        to="/first_question"
         v-for="menue in menueData"
-        v-bind:key="menue.title"
+        v-bind:to="menue.path"
+        v-bind:key="menue.index"
         class="menue__card"
       >
         <div></div>
@@ -49,12 +49,13 @@ export default {
       menueData: [
         {
           title: "Lesson1",
-          path: "/css_questions/first-question.vue",
+          path: "/first_question",
           text: "CSSを記述してみましょう！",
         },
 
         {
           title: "Lesson2",
+          path: "/second_question",
           text: "flex-boxを使ってみよう！",
         },
 

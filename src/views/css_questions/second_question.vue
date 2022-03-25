@@ -11,9 +11,10 @@
         class="screen"
       >
         <div class="buildingField" v-bind:style="contentCode">
-          <img src="/img/building-05.png" class="build1" />
-          <img src="/img/building-01.png" class="build2" />
-          <img src="/img/building-07.png" class="build2" />
+          <img src="/img/building-02.png" class="build1" />
+          <img src="/img/building-17.png" class="build2" />
+          <img src="/img/building-13.png" class="build2" />
+          <img src="/img/building-21.png" class="build2" />
         </div>
       </div>
     </div>
@@ -23,14 +24,12 @@
     </div>
     <h2></h2>
     <div class="rightHand">
-      <h1>Lesson1</h1>
+      <h1>Lesson2</h1>
       <section>
         <p>
-          situation: この街にデパート、病院、学校が設置されました。<br />
-          更なる街の発展のためこの地区を一面舗装しましょう。
+          situation:こちらでは道路を通すため施設の設置場所を<br />予想図のようにしなければなりません。
         </p>
-
-        <p>mission: 参考画像のようにbackground-colorをgrayにしましょう</p>
+        <p>mission: flex-boxを使ってレイアウトを変えましょう</p>
       </section>
 
       <!-- <editorSpace /> -->
