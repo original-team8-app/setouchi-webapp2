@@ -67,7 +67,7 @@ export default {
 
         {
           title: "Lesson5",
-          path: "/css_questions/first-question.vue",
+          path: "/fifith_question",
           text: "CSSを記述してみましょう！",
         },
       ],
