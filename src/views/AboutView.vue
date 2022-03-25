@@ -61,7 +61,7 @@ export default {
 
         {
           title: "Lesson4",
-          path: "/css_questions/first-question.vue",
+          path: "/forth_question",
           text: "flex-boxを応用してみよう！(3)",
         },
 
