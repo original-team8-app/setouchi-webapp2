@@ -19,7 +19,7 @@
     </div>
     <div class="runningButton">
       <button>ヒント💡</button>
-      <button>完成！</button>
+      <button @click="jumpToQ2">完成！</button>
     </div>
     <h2></h2>
     <div class="rightHand">
@@ -55,6 +55,9 @@ import "ace-builds/src-noconflict/theme-monokai"
 export default {
   methods: {
     editorInit: function () {},
+    jumpToQ2: function () {
+      this.$router.push("/css_questions/second_question")
+    },
   },
   components: {
     VAceEditor,
