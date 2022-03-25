@@ -17,11 +17,6 @@
         </div>
       </div>
     </div>
-    <div class="runningButton">
-      <button>ヒント💡</button>
-      <button @click="jumpToQ2">完成！</button>
-    </div>
-    <h2></h2>
     <div class="rightHand">
       <h1>Lesson1</h1>
       <section>
@@ -31,16 +26,27 @@
         </p>
 
         <p>mission: 参考画像のようにbackground-colorをgrayにしましょう</p>
-      </section>
 
-      <!-- <editorSpace /> -->
-      <v-ace-editor
-        v-model:value="contentCode"
-        @init="editorInit"
-        lang="css"
-        theme="chrome"
-        style="height: 300px"
-      />
+        <!-- <editorSpace /> -->
+        <v-ace-editor
+          v-model:value="contentCode"
+          @init="editorInit"
+          lang="css"
+          theme="chrome"
+          style="height: 300px"
+        />
+      </section>
+      <div class="runningButton">
+        <button v-on:click="openModal">ヒント💡</button>
+        <button @click="jumpToQ2">完成！</button>
+      </div>
+    </div>
+
+    <div id="overlay" v-show="showContent">
+      <div id="content">
+        <p>これがモーダルウィンドウです。</p>
+        <p><button v-on:click="closeModal">閉じる</button></p>
+      </div>
     </div>
   </div>
 </template>
@@ -58,6 +64,12 @@ export default {
     jumpToQ2: function () {
       this.$router.push("/css_questions/second_question")
     },
+    openModal: function () {
+      this.showContent = true
+    },
+    closeModal: function () {
+      this.showContent = false
+    },
   },
   components: {
     VAceEditor,
@@ -71,6 +83,7 @@ export default {
     height: 100%;
     /*ここにコードを追加*/
   `,
+      showContent: false,
     }
   },
 }
@@ -116,6 +129,31 @@ export default {
 
 .rightHand {
   width: 45%;
+}
+
+#overlay {
+  /*要素を重ねた時の順番*/
+  z-index: 1;
+
+  /*画面全体を覆う設定*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  /*画面の中央に要素を表示させる設定*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  z-index: 2;
+  width: 50%;
+  padding: 1em;
+  background: #fff;
 }
 </style>
 
