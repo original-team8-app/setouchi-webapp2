@@ -16,10 +16,6 @@
     </div>
     <div class="iconArea"></div>
 
-    <div>
-      <button @click="jumpToQ1" class="startbutton">最初から始める！</button>
-    </div>
-
     <div id="card__list">
       <router-link
         v-for="menue in menueData"
@@ -39,11 +35,6 @@
 </template>
 <script>
 export default {
-  methods: {
-    jumpToQ1: function () {
-      this.$router.push("/css_questions/first-question")
-    },
-  },
   data: function () {
     return {
       menueData: [

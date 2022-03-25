@@ -37,15 +37,15 @@
         />
       </section>
       <div class="runningButton">
-        <button v-on:click="openModal">ヒント💡</button>
-        <button @click="jumpToQ2">完成！</button>
+        <button v-on:click="openModal" class="d_button">予想図</button>
+        <button @click="$router.back()" class="d_button">完成！</button>
       </div>
     </div>
 
     <div id="overlay" v-show="showContent">
       <div id="content">
-        <p>これがモーダルウィンドウです。</p>
-        <p><button v-on:click="closeModal">閉じる</button></p>
+        <img src="/img/sample_firstQuestion.png" class="build1" />
+        <p><button v-on:click="closeModal" class="d_button">閉じる</button></p>
       </div>
     </div>
   </div>
@@ -154,6 +154,28 @@ export default {
   width: 50%;
   padding: 1em;
   background: #fff;
+}
+
+.runningButton {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.d_button {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.5rem;
+  background: #f7f7f7;
+  border-left: solid 6px #58ad5a;
+  color: #58ad5a;
+  font-weight: bold;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.22);
+  width: 25%;
+}
+
+.d_button:active {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.11);
+  transform: translateY(2px);
 }
 </style>
 
