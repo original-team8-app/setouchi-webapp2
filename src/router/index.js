@@ -55,9 +55,9 @@ const routes = [
   },
 
   {
-    path: "/fifth_question",
-    name: "forthQuestion ",
-    component: forthQuestion,
+    path: "/fifith_question",
+    name: "fifthQuestion",
+    component: fifithquestion,
   },
   /* eslint-disable */
   {

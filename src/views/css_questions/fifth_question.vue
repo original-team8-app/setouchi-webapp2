@@ -11,25 +11,43 @@
         class="screen"
       >
         <div class="buildingField" v-bind:style="contentCode">
-          <img src="/img/building-04.png" class="build" />
-          <img src="/img/building-01.png" class="build" />
-          <img src="/img/building-21.png" class="build" />
-          <img src="/img/building-25.png" class="build" />
-          <img src="/img/building-09.png" class="build" />
-          <img src="/img/building-12.png" class="build" />
-          <img src="/img/building-13.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-16.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-16.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-16.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-08.png" class="build" />
+          <img src="/img/building-16.png" class="build" />
+          <img src="/img/building-16.png" class="build" />
+          <img src="/img/building-10.png" class="build" />
+          <img src="/img/building-02.png" class="build_target" />
         </div>
       </div>
     </div>
     <div class="rightHand">
-      <h1>Lesson4</h1>
+      <h1>Lesson5</h1>
       <section>
         <p>
-          situation: 現在この地区では道路のルート変更が行われていおり<br />
-          新しく作られる道路に合わせて予想図のように縦向きに建物を配置しなおす<br />必要があります。道路は画面の左端に設置する予定で幅が100pxです。
+          situation: この地区は繁華街で南側に警察署があります。<br />
+          しかし北部（画面上部）にも対応できるように<br />繁華街の北側に移転することになりました。
         </p>
 
-        <p>mission: flex-directionを使ってみましょう</p>
+        <p>mission: flex-wrapを使ってみましょう</p>
 
         <!-- <editorSpace /> -->
         <v-ace-editor
@@ -48,7 +66,7 @@
 
     <div id="overlay" v-show="showContent">
       <div id="content">
-        <img src="/img/sample_lesson4.png" class="sample-img" />
+        <img src="/img/sample_lesson5.png" class="sample-img" />
         <p><button v-on:click="closeModal" class="d_button">閉じる</button></p>
       </div>
     </div>
@@ -123,6 +141,12 @@ export default {
   object-fit: contain;
   width: 100px;
   height: 100px;
+}
+
+.build_target {
+  object-fit: contain;
+  width: 150px;
+  height: 150px;
 }
 
 .rightHand {
