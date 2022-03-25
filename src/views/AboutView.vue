@@ -68,6 +68,12 @@ export default {
         {
           title: "Lesson5",
           path: "/fifith_question",
+          text: "flex-boxを応用してみよう！(3)",
+        },
+
+        {
+          title: "Lesson6",
+          path: "/6th_question",
           text: "CSSを記述してみましょう！",
         },
       ],
