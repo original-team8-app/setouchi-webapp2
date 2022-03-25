@@ -48,7 +48,7 @@
 
     <div id="overlay" v-show="showContent">
       <div id="content">
-        <img src="/img/sample_lesson2.png" class="sample-img" />
+        <img src="/img/sample_lesson3.png" class="sample-img" />
         <p><button v-on:click="closeModal" class="d_button">閉じる</button></p>
       </div>
     </div>
