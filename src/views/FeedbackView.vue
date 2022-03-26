@@ -9,7 +9,7 @@
       class="edit-area"
       :value="deliveryData"
       lang="html"
-      theme="monokai"
+      theme="chrome"
     />
     <div class="back" v-html="deliveryData"></div>
   </div>
@@ -21,7 +21,7 @@
 <script>
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-monokai"
+import "ace-builds/src-noconflict/theme-chrome"
 export default {
   components: {
     VAceEditor,

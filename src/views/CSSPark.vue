@@ -165,14 +165,41 @@ html {
 *::after {
   box-sizing: inherit;
 }
+.css-park {
+  background-color: #e9f5db;
+}
 .title__container {
-  background-color: #afcbff;
+  background: linear-gradient(#cbdab8, #e7f3da);
 }
 .title__logo {
   font-size: 3.5rem;
   text-align: left;
-  margin-left: 30px;
+  margin: 0 0 0 30px;
+  position: relative;
 }
+.title__logo:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: -webkit-repeating-linear-gradient(
+    -45deg,
+    green,
+    green 2px,
+    #e9f5db 2px,
+    #e9f5db 4px
+  );
+  background: repeating-linear-gradient(
+    -45deg,
+    green,
+    #6ad1c8 2px,
+    #e9f5db 2px,
+    #e9f5db 4px
+  );
+}
+
 .title__text {
   font-size: 1.5rem;
   text-align: left;
@@ -182,7 +209,7 @@ html {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #faffff;
+  background-color: #f7faf4;
   border: 1px solid black;
   border-radius: 5px;
   padding: 35px 0;
@@ -194,11 +221,12 @@ html {
   position: absolute;
   top: -1.3rem;
   left: 3%;
-  background-color: #faffff;
+  background: linear-gradient(#e9f5db, #f7faf4);
   padding: 0 1rem 0 1rem;
 }
 .content__container {
   border: 1px solid black;
+  background-color: #ffffff;
   margin: 30px 30px;
   border-radius: 5px;
   opacity: 0.9;

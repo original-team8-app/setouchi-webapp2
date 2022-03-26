@@ -9,7 +9,7 @@
     class="edit-area"
     v-model:value="contentCode"
     lang="html"
-    theme="monokai"
+    theme="chrome"
   />
 </template>
 
@@ -17,7 +17,7 @@
 import GameTemplate from "@/components/GameTemplate.vue"
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-monokai"
+import "ace-builds/src-noconflict/theme-chrome"
 export default {
   components: {
     GameTemplate,

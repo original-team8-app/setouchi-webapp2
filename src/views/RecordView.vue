@@ -9,7 +9,7 @@
       class="edit-area"
       :value="recordData.contentCode"
       lang="html"
-      theme="monokai"
+      theme="chrome"
     />
     <div class="back" v-html="recordData.contentCode"></div>
   </div>
@@ -21,7 +21,7 @@
 <script>
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-monokai"
+import "ace-builds/src-noconflict/theme-chrome"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../firebase"
 
