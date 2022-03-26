@@ -82,6 +82,12 @@ export default {
           path: "/7th_question",
           text: "gridを使ってみよう！(2)",
         },
+
+        {
+          title: "Lesson8",
+          path: "/8th_question",
+          text: "gridを使ってみよう！(3)",
+        },
       ],
     }
   },

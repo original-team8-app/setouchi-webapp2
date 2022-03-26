@@ -9,6 +9,7 @@ import forthQuestion from "../views/css_questions/forth_question.vue"
 import fifithquestion from "../views/css_questions/fifth_question.vue"
 import sixthquestion from "../views/css_questions/6th_question.vue"
 import seventhquestion from "../views/css_questions/7th_question.vue"
+import eigthquestion from "../views/css_questions/8th_question.vue"
 
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
@@ -72,6 +73,12 @@ const routes = [
     path: "/7th_question",
     name: "seventhquestion",
     component: seventhquestion,
+  },
+
+  {
+    path: "/8th_question",
+    name: "eigthquestion",
+    component: eigthquestion,
   },
   /* eslint-disable */
   {
