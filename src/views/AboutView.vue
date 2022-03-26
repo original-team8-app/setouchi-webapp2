@@ -74,7 +74,13 @@ export default {
         {
           title: "Lesson6",
           path: "/6th_question",
-          text: "git gridを使ってみよう！",
+          text: "gridを使ってみよう！",
+        },
+
+        {
+          title: "Lesson7",
+          path: "/7th_question",
+          text: "gridを使ってみよう！(2)",
         },
       ],
     }
