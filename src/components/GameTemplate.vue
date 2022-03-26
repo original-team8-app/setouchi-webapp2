@@ -1,5 +1,12 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
+  <v-ace-editor
+    class="edit-area"
+    :value="passContentCode"
+    @input="$emit('updateContentCode')"
+    lang="html"
+    theme="monokai"
+  />
   <div class="label__canvas">{{ labels.canvasLabel }}</div>
   <div class="label__sample">{{ labels.sampleLabel }}</div>
   <div>
@@ -47,10 +54,16 @@
 </template>
 
 <script>
+import { VAceEditor } from "vue3-ace-editor"
+import "ace-builds/src-noconflict/mode-html"
+import "ace-builds/src-noconflict/theme-monokai"
 import { doc, setDoc } from "firebase/firestore"
 import { db } from "../firebase"
 
 export default {
+  components: {
+    VAceEditor,
+  },
   props: {
     passTitle: String,
     passColorCodes: Array,
@@ -103,6 +116,12 @@ html {
   text-align: left;
   padding: 10px 3rem;
   margin: 0;
+}
+.edit-area {
+  height: 90vh;
+  width: 70vh;
+  font-size: 1rem;
+  outline: auto;
 }
 .label__canvas {
   position: absolute;

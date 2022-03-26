@@ -4,24 +4,16 @@
     :passColorCodes="colorCodes"
     :passSampleCode="sampleCode"
     :passContentCode="contentCode"
-  />
-  <v-ace-editor
-    class="edit-area"
-    v-model:value="contentCode"
-    lang="html"
-    theme="monokai"
+    @updateContentCode="this.contentCode = updateContentCode"
   />
 </template>
 
 <script>
 import GameTemplate from "@/components/GameTemplate.vue"
-import { VAceEditor } from "vue3-ace-editor"
-import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-monokai"
+
 export default {
   components: {
     GameTemplate,
-    VAceEditor,
   },
   data() {
     return {
@@ -62,12 +54,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-.edit-area {
-  height: 90vh;
-  width: 70vh;
-  font-size: 1rem;
-  outline: auto;
-}
-</style>
