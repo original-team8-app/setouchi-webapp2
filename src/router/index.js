@@ -15,8 +15,14 @@ import Ex_Guitar from "../views/Ex_Guitar.vue"
 import Ex_Gift from "../views/Ex_Gift.vue"
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
+import TopView from "../views/TopView.vue"
 
 const routes = [
+  {
+    path: "/top",
+    name: "top",
+    component: TopView,
+  },
   {
     path: "/",
     name: "home",
