@@ -9,7 +9,7 @@
     class="edit-area"
     v-model:value="contentCode"
     lang="html"
-    theme="chrome"
+    theme="monokai"
   />
 </template>
 
@@ -17,7 +17,7 @@
 import GameTemplate from "@/components/GameTemplate.vue"
 import { VAceEditor } from "vue3-ace-editor"
 import "ace-builds/src-noconflict/mode-html"
-import "ace-builds/src-noconflict/theme-chrome"
+import "ace-builds/src-noconflict/theme-monokai"
 export default {
   components: {
     GameTemplate,
@@ -66,7 +66,7 @@ export default {
 <style scoped>
 .edit-area {
   height: 90vh;
-  width: 70vh;
+  width: 75vh;
   font-size: 1rem;
   outline: auto;
 }

@@ -2,6 +2,7 @@
   <div class="background">
     <div class="title__container">
       <h2 class="title__logo">{{ title.logo }}</h2>
+      <img class="title__img" :src="title.imagePath" alt="title.imageAlt" />
       <p class="title__text">{{ title.text }}</p>
     </div>
     <div class="content__wrapper">
@@ -54,6 +55,8 @@ export default {
       title: {
         logo: "CSS Park",
         text: "-コードを書いて例題のイメージに近づけよう！( 全12ステージ )",
+        imagePath: require("@/assets/SunImg.png"),
+        imageAlt: "太陽さんさん",
       },
       contentTitle: {
         normal: "Contents Lv.1~8",
@@ -171,12 +174,13 @@ html {
   background-color: #e9f5db;
 }
 .title__container {
-  background: linear-gradient(#cbdab8, #e7f3da);
+  background: linear-gradient(#d4e2c1, #e7f3da);
+  text-align: left;
 }
 .title__logo {
   font-size: 3.5rem;
-  text-align: left;
   margin: 0 0 0 30px;
+  display: inline-block;
   position: relative;
 }
 .title__logo:after {
@@ -184,15 +188,8 @@ html {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 120%;
   height: 7px;
-  background: -webkit-repeating-linear-gradient(
-    -45deg,
-    green,
-    green 2px,
-    #e9f5db 2px,
-    #e9f5db 4px
-  );
   background: repeating-linear-gradient(
     -45deg,
     green,
@@ -201,11 +198,18 @@ html {
     #e9f5db 4px
   );
 }
-
+.title__img {
+  display: inline-block;
+  width: 40px;
+  margin-left: 20px;
+  margin-top: 5px;
+  vertical-align: top;
+}
 .title__text {
   font-size: 1.5rem;
   text-align: left;
   margin-left: 100px;
+  margin-bottom: 70px;
 }
 .content__wrapper {
   display: flex;
