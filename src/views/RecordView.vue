@@ -67,7 +67,7 @@ export default {
   margin: 50px auto;
   height: 420px;
   width: 1150px;
-  border: 1px solid black;
+  border: 1px solid #303030;
   position: relative;
 }
 .content__title {

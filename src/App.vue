@@ -13,7 +13,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #303030;
 }
 
 body {
@@ -21,6 +21,7 @@ body {
 }
 nav {
   padding: 30px;
+  background: #415a77;
 }
 
 nav a {

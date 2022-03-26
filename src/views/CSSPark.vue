@@ -1,46 +1,48 @@
 <template>
-  <div class="title__container">
-    <h2 class="title__logo">{{ title.logo }}</h2>
-    <p class="title__text">{{ title.text }}</p>
-  </div>
-  <div class="content__wrapper">
-    <span class="content__title">{{ contentTitle.normal }}</span>
-    <div
-      class="content__container"
-      v-for="content in contents"
-      :key="content.index"
-    >
-      <router-link :to="content.path">
-        <img
-          class="content__img"
-          :src="content.imagePath"
-          :alt="content.imageAlt"
-        />
-        <p class="content__text">{{ content.text }}</p>
-      </router-link>
-      <button class="content__record" @click="toRecord(content.docName)">
-        {{ recordText }}
-      </button>
+  <div class="background">
+    <div class="title__container">
+      <h2 class="title__logo">{{ title.logo }}</h2>
+      <p class="title__text">{{ title.text }}</p>
     </div>
-  </div>
-  <div class="content__wrapper">
-    <span class="content__title">{{ contentTitle.extra }}</span>
-    <div
-      class="content__container"
-      v-for="exContent in exContents"
-      :key="exContent.index"
-    >
-      <router-link :to="exContent.path">
-        <img
-          class="content__img"
-          :src="exContent.imagePath"
-          :alt="exContent.imageAlt"
-        />
-        <p class="content__text">{{ exContent.text }}</p>
-      </router-link>
-      <button class="content__record" @click="toRecord(exContent.docName)">
-        {{ recordText }}
-      </button>
+    <div class="content__wrapper">
+      <span class="content__title">{{ contentTitle.normal }}</span>
+      <div
+        class="content__container"
+        v-for="content in contents"
+        :key="content.index"
+      >
+        <router-link :to="content.path">
+          <img
+            class="content__img"
+            :src="content.imagePath"
+            :alt="content.imageAlt"
+          />
+          <p class="content__text">{{ content.text }}</p>
+        </router-link>
+        <button class="content__record" @click="toRecord(content.docName)">
+          {{ recordText }}
+        </button>
+      </div>
+    </div>
+    <div class="content__wrapper">
+      <span class="content__title">{{ contentTitle.extra }}</span>
+      <div
+        class="content__container"
+        v-for="exContent in exContents"
+        :key="exContent.index"
+      >
+        <router-link :to="exContent.path">
+          <img
+            class="content__img"
+            :src="exContent.imagePath"
+            :alt="exContent.imageAlt"
+          />
+          <p class="content__text">{{ exContent.text }}</p>
+        </router-link>
+        <button class="content__record" @click="toRecord(exContent.docName)">
+          {{ recordText }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -165,7 +167,7 @@ html {
 *::after {
   box-sizing: inherit;
 }
-.css-park {
+.background {
   background-color: #e9f5db;
 }
 .title__container {
@@ -210,7 +212,7 @@ html {
   justify-content: center;
   flex-wrap: wrap;
   background-color: #f7faf4;
-  border: 1px solid black;
+  border: 1px solid #303030;
   border-radius: 5px;
   padding: 35px 0;
   margin: 50px 20px;
@@ -225,7 +227,7 @@ html {
   padding: 0 1rem 0 1rem;
 }
 .content__container {
-  border: 1px solid black;
+  border: 1px solid #303030;
   background-color: #ffffff;
   margin: 30px 30px;
   border-radius: 5px;
@@ -238,11 +240,11 @@ html {
   transform: scale(1.05, 1.05);
 }
 .content__container * {
-  color: black;
+  color: #303030;
   text-decoration: none;
 }
 .content__img {
-  border: 1px solid black;
+  border: 1px solid #303030;
   border-radius: 5px;
   margin: 5px 5px 0 5px;
   width: 250px;
@@ -264,6 +266,6 @@ html {
   color: #696969;
 }
 .content__record:hover {
-  color: black;
+  color: #303030;
 }
 </style>
