@@ -7,6 +7,7 @@ import secondQuestion from "../views/css_questions/second_question.vue"
 import thirdQuestion from "../views/css_questions/third_question.vue"
 import forthQuestion from "../views/css_questions/forth_question.vue"
 import fifithquestion from "../views/css_questions/fifth_question.vue"
+import sixthquestion from "../views/css_questions/6th_question.vue"
 
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
@@ -58,6 +59,12 @@ const routes = [
     path: "/fifith_question",
     name: "fifthQuestion",
     component: fifithquestion,
+  },
+
+  {
+    path: "/6th_question",
+    name: "sixthquestion",
+    component: sixthquestion,
   },
   /* eslint-disable */
   {
