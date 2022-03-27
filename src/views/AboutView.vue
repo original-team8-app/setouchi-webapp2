@@ -11,20 +11,19 @@
     </div>
 
     <div class="ruleIntroduction">
-      <h2>ルール説明</h2>
-      <p>CSSでレイアウトを変更し、建物を配置して街を完成させましょう！</p>
+      <h2>遊び方</h2>
+      <p>
+        あなたはめでたくこの街の市長に就任しました！<br />CSSを記述し街の施設をレイアウトすることで街を発展できるように頑張りましょう！<br />
+        ゲーム画面を開くと完成予想図が出てきます。それを参考にレイアウトしていきましょう
+      </p>
     </div>
     <div class="iconArea"></div>
 
-    <div>
-      <button @click="jumpToQ1" class="startbutton">最初から始める！</button>
-    </div>
-
     <div id="card__list">
       <router-link
-        to="/first-question.vue"
         v-for="menue in menueData"
-        v-bind:key="menue.title"
+        v-bind:to="menue.path"
+        v-bind:key="menue.index"
         class="menue__card"
       >
         <div></div>
@@ -39,41 +38,55 @@
 </template>
 <script>
 export default {
-  methods: {
-    jumpToQ1: function () {
-      this.$router.push("/css_questions/first-question")
-    },
-  },
   data: function () {
     return {
       menueData: [
         {
           title: "Lesson1",
-          path: "/css_questions/first-question.vue",
+          path: "/first_question",
           text: "CSSを記述してみましょう！",
         },
 
         {
           title: "Lesson2",
+          path: "/second_question",
           text: "flex-boxを使ってみよう！",
         },
 
         {
           title: "Lesson3",
-          path: "/css_questions/first-question.vue",
+          path: "/third_question",
           text: "flex-boxを応用してみよう！(2)",
         },
 
         {
           title: "Lesson4",
-          path: "/css_questions/first-question.vue",
+          path: "/forth_question",
           text: "flex-boxを応用してみよう！(3)",
         },
 
         {
           title: "Lesson5",
-          path: "/css_questions/first-question.vue",
-          text: "CSSを記述してみましょう！",
+          path: "/fifith_question",
+          text: "flex-boxを応用してみよう！(3)",
+        },
+
+        {
+          title: "Lesson6",
+          path: "/6th_question",
+          text: "gridを使ってみよう！",
+        },
+
+        {
+          title: "Lesson7",
+          path: "/7th_question",
+          text: "gridを使ってみよう！(2)",
+        },
+
+        {
+          title: "Lesson8",
+          path: "/8th_question",
+          text: "gridを使ってみよう！(3)",
         },
       ],
     }

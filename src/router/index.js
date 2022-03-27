@@ -1,7 +1,21 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
-import CSSPark from "../views/CSSPark.vue"
+
+
+
 import firstQuestion from "../views/css_questions/first_question.vue"
+import secondQuestion from "../views/css_questions/second_question.vue"
+import thirdQuestion from "../views/css_questions/third_question.vue"
+import forthQuestion from "../views/css_questions/forth_question.vue"
+import fifithquestion from "../views/css_questions/fifth_question.vue"
+import sixthquestion from "../views/css_questions/6th_question.vue"
+import seventhquestion from "../views/css_questions/7th_question.vue"
+import eigthquestion from "../views/css_questions/8th_question.vue"
+
+
+import CSSPark from "../views/CSSPark.vue"
+
+
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
@@ -32,15 +46,57 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
-  {
-    path: "/css-park",
+  { 
+   path: "/css-park",
     name: "css-park",
     component: CSSPark,
   },
   {
-    path: "/css_questions/first-question",
+    path: "/first_question",
     name: "firstQuestion",
     component: firstQuestion,
+  },
+
+  {
+    path: "/second_question",
+    name: "secondQuestion ",
+    component: secondQuestion,
+  },
+
+  {
+    path: "/third_question",
+    name: "thirdQuestion ",
+    component: thirdQuestion,
+  },
+
+  {
+    path: "/forth_question",
+    name: "forthQuestion ",
+    component: forthQuestion,
+  },
+
+  {
+    path: "/fifith_question",
+    name: "fifthQuestion",
+    component: fifithquestion,
+  },
+
+  {
+    path: "/6th_question",
+    name: "sixthquestion",
+    component: sixthquestion,
+  },
+
+  {
+    path: "/7th_question",
+    name: "seventhquestion",
+    component: seventhquestion,
+  },
+
+  {
+    path: "/8th_question",
+    name: "eigthquestion",
+    component: eigthquestion,
   },
   /* eslint-disable */
   {
