@@ -25,23 +25,42 @@ export default {
   },
   data() {
     return {
-      title: "Lv.1 Leaf",
-      colorCodes: ["#008000", "#fafad7"],
-      sampleCode: `<div class="sample__object"></div>
+      title: "Lv.8 Star",
+      colorCodes: ["#ffd700", "#4682b4"],
+      sampleCode: `<div class="sample__star"></div>
 
 <style>
-  .sample__object{
-    width: 150px;
-    height: 150px;
-    background-color: #008000;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100px 0;
-  }
+  .sample__star {
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #ffd700;
+      height: 0;
+      width: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(35.4deg);
+    }
+    .sample__star:before,
+    .sample__star:after {
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #ffd700;
+      content: "";
+      height: 0;
+      left: -100px;
+      position: absolute;
+      top: 0;
+      width: 0;
+    }
+    .sample__star:before {
+      transform: rotate(71deg);
+    }
+    .sample__star:after {
+      transform: rotate(-71deg);
+    }
     .sample__back{
-    background-color: #fafad7;
+    background-color: #4682b4;
     }
 </style>`,
       contentCode: `<div class="object"></div>
@@ -50,7 +69,7 @@ export default {
   .object{
     width: 150px;
     height: 150px;
-    background-color: #008000;
+    background-color: #ffd700;
     /*ここにコードを追加*/
   }
   .back{

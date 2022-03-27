@@ -77,7 +77,8 @@ export default {
   .back{
     
   }
-</style>`,
+</style>
+`,
     }
   },
 }
@@ -85,11 +86,9 @@ export default {
 
 <style scoped>
 .edit-area {
-  height: 80vh;
+  height: 90vh;
   width: 70vh;
   font-size: 1rem;
   outline: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 </style>

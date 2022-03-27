@@ -25,54 +25,64 @@ export default {
   },
   data() {
     return {
-      title: "Lv.3 Cancel Button",
-      colorCodes: ["#ff0000", "#ffffff", "#5a96c7"],
-      sampleCode: `<div class="sample__object"></div>
-      <div class="sample__bar1">
-      <div class="sample__bar2">
+      title: "Ex. Monster Ball",
+      colorCodes: ["#cd5c5c", "#ffffff", "#781728", "#ffe4c4", "#48d1cc"],
+      sampleCode: `<div class="sample__top"></div>
+    <div class="sample__bottom"></div>
+    <div class="sample__joint"></div>
+    <div class="sample__button"></div>
 
 <style>
-  .sample__object{
-    background-color: #ff0000;
-    width: 180px;
-    height: 130px;
+  .sample__top {
+    width: 200px;
+    height: 100px;
+    background: #cd5c5c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    border-radius: 100px 100px 0 0;
+  }
+  .sample__bottom {
+    width: 200px;
+    height: 100px;
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0 0 100px 100px;
+  }
+  .sample__joint {
+    width: 200px;
+    height: 20px;
+    background: #781728;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 10px;
   }
-  .sample__bar1{
-    background-color: #ffffff;
-    width: 20px;
-    height: 100px;
+  .sample__button {
+    width: 50px;
+    height: 50px;
+    background-color: #ffe4c4;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
-    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 15px solid #781728;
   }
-  .sample__bar2{
-    background-color: #ffffff;
-    width: 20px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(90deg);
-    border-radius: 10px;
-  }
-  .sample__back{
-    background-color: #5a96c7;
-  }
-</style>`,
+  .sample__back {
+    background: #48d1cc;
+  }`,
       contentCode: `<div class="object"></div>
 
 <style>
   .object{
     width: 150px;
     height: 150px;
-    background-color: #ff0000;
+    background-color: #cd5c5c;
     /*ここにコードを追加*/
   }
   .back{

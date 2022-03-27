@@ -1,39 +1,55 @@
 <template>
   <h1 class="title">{{ passTitle }}</h1>
+  <div class="label__canvas">{{ labels.canvasLabel }}</div>
+  <div class="label__sample">{{ labels.sampleLabel }}</div>
   <div>
     <div class="back" v-html="passContentCode"></div>
     <div
       class="sample__back sample__opacity"
       v-html="passSampleCode"
-      v-bind:style="{ opacity: opacityValue }"
+      :style="{ opacity: opacityValue }"
     ></div>
   </div>
   <div>
     <div class="sample__back" v-html="passSampleCode"></div>
   </div>
   <div class="opacity-bar">
-    透過度:
+    {{ labels.opacityLabel }}
     <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
+  </div>
+  <div class="how-to__wrapper">
+    <p class="how-to__title">{{ howToTitle }}</p>
+    <ol class="how-to__text">
+      <li v-for="howToText in howToTexts" :key="howToText.index">
+        {{ howToText }}
+      </li>
+    </ol>
+    <p class="how-to__hint">{{ howToHint }}</p>
   </div>
   <div class="color-palette">
     <div
       class="color-list"
       v-for="passColorCode in passColorCodes"
-      v-bind:key="passColorCode.index"
+      :key="passColorCode.index"
     >
       <div
         class="color-checker"
-        v-bind:style="{
+        :style="{
           backgroundColor: passColorCode,
         }"
       ></div>
       <div class="color-code">{{ passColorCode }}</div>
     </div>
   </div>
-  <button class="finish-button">完成！</button>
+  <button class="finish-button" @click="updateSavedContentCode">
+    {{ finishButtonText }}
+  </button>
 </template>
 
 <script>
+import { doc, setDoc } from "firebase/firestore"
+import { db } from "../firebase"
+
 export default {
   props: {
     passTitle: String,
@@ -44,7 +60,32 @@ export default {
   data() {
     return {
       opacityValue: 0,
+      labels: {
+        canvasLabel: "- キャンバス",
+        sampleLabel: "- 完成例",
+        opacityLabel: "透過度: ",
+      },
+      howToTitle: "遊び方",
+      howToTexts: [
+        "html,cssを記述して「完成例」イメージを作成しよう!",
+        "エディタに記述したコードは「キャンバス」に反映されるよ!",
+        "正解のコードは1つとは限らないよ! 色々な方法を模索してみよう!",
+        "「完成!」ボタンを押して終了！ その時点のコードとキャンバスが保存されるよ!",
+      ],
+      howToHint: "Hint. ブラウザの「検証ツール」で例題の答えが見られるかも...",
+      finishButtonText: "完成！",
     }
+  },
+  methods: {
+    updateSavedContentCode() {
+      setDoc(doc(db, "contents", this.passTitle), {
+        contentCode: this.passContentCode,
+      })
+      this.$router.push({
+        name: "feedback",
+        params: { deliveryData: this.passContentCode },
+      })
+    },
   },
 }
 </script>
@@ -60,12 +101,28 @@ html {
 }
 .title {
   text-align: left;
-  padding-left: 2rem;
+  padding: 10px 3rem;
+  margin: 0;
+}
+.label__canvas {
+  position: absolute;
+  top: 21vh;
+  left: 80vh;
+  width: 120px;
+  font-size: 1.2rem;
+  /* background-color: rgb(230, 227, 227); */
+}
+.label__sample {
+  position: absolute;
+  top: 21vh;
+  left: 135vh;
+  width: 80px;
+  font-size: 1.2rem;
 }
 .back {
   position: absolute;
-  top: 20vh;
-  left: 85vh;
+  top: 25vh;
+  left: 80vh;
   height: 300px;
   width: 300px;
   outline: auto;
@@ -73,7 +130,7 @@ html {
 }
 .sample__back {
   position: absolute;
-  top: 20vh;
+  top: 25vh;
   left: 135vh;
   height: 300px;
   width: 300px;
@@ -81,22 +138,50 @@ html {
   padding: 10px;
 }
 .sample__opacity {
-  top: 20vh;
-  left: 85vh;
+  top: 25vh;
+  left: 80vh;
 }
 .opacity-bar {
   position: absolute;
-  top: 65vh;
-  left: 95vh;
-  transform: scale(1.5, 1.5);
+  top: 69vh;
+  left: 89vh;
+  transform: scale(1.7, 1.5);
   font-size: 14px;
+}
+.how-to__wrapper {
+  background-color: rgb(230, 227, 227);
+  width: 420px;
+  height: 220px;
+  position: absolute;
+  top: 80vh;
+  left: 75vh;
+  overflow-y: scroll;
+  /* opacity: 0.5;
+  transition: all 0.3s; */
+}
+/* .how-to__wrapper:hover {
+  opacity: 1;
+} */
+.how-to__title {
+  font-size: 1.5rem;
+}
+.how-to__text li {
+  text-align: justify;
+  margin-bottom: 15px;
+  padding-right: 30px;
+}
+.how-to__hint {
+  font-size: 14px;
+  padding: 15px 30px 0 60px;
+  text-align: justify;
+  text-indent: -35px;
 }
 .color-palette {
   background-color: rgb(230, 227, 227);
   width: 300px;
   padding: 10px 10px;
   position: absolute;
-  top: 65vh;
+  top: 70vh;
   left: 135vh;
   display: flex;
   align-items: center;
@@ -119,10 +204,10 @@ html {
 }
 .finish-button {
   position: absolute;
-  top: 85vh;
+  top: 95vh;
   left: 150vh;
   height: 60px;
-  width: 130px;
+  width: 160px;
   font-size: 1.5rem;
 }
 </style>
