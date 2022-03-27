@@ -4,7 +4,7 @@
     :passColorCodes="colorCodes"
     :passSampleCode="sampleCode"
     :passContentCode="contentCode"
-    @updateContentCode="this.contentCode = updateContentCode"
+    @update:contentCode="updateContent"
   />
 </template>
 
@@ -46,11 +46,16 @@ export default {
     /*ここにコードを追加*/
   }
   .back{
-    
+
   }
 </style>
 `,
     }
+  },
+  methods: {
+    updateContent(value) {
+      this.contentCode = value
+    },
   },
 }
 </script>

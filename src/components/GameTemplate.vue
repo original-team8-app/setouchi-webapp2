@@ -2,8 +2,8 @@
   <h1 class="title">{{ passTitle }}</h1>
   <v-ace-editor
     class="edit-area"
-    :value="passContentCode"
-    @input="$emit('updateContentCode')"
+    v-model:value="updateContentCode"
+    @init="editorInit"
     lang="html"
     theme="monokai"
   />
@@ -70,6 +70,7 @@ export default {
     passSampleCode: String,
     passContentCode: String,
   },
+  emits: ["update:contentCode"],
   data() {
     return {
       opacityValue: 0,
@@ -89,7 +90,18 @@ export default {
       finishButtonText: "完成！",
     }
   },
+  computed: {
+    updateContentCode: {
+      get() {
+        return this.passContentCode
+      },
+      set(value) {
+        this.$emit("update:contentCode", value)
+      },
+    },
+  },
   methods: {
+    editorInit: function () {},
     updateSavedContentCode() {
       setDoc(doc(db, "contents", this.passTitle), {
         contentCode: this.passContentCode,
