@@ -1,14 +1,13 @@
-import { createRouter, createWebHistory } from "vue-router"
-import HomeView from "../views/HomeView.vue"
-import ThreeView from "../views/ThreeView.vue"
+import HomeView from "../views/shortcut/HomeView.vue"
+import ThreeView from "../views/shortcut/HomeView.vue"
 import firstQuestion from "../views/css_questions/first-question.vue"
-
 import Lv1_Leaf from "../views/Lv1_Leaf.vue"
 import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
 import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
 import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
 import Lv5_Triangle from "../views/Lv5_Triangle.vue"
 import Lv6_Infinity from "../views/Lv6_Infinity.vue"
+import { createRouter, createWebHistory } from "vue-router"
 
 const routes = [
   {
@@ -65,7 +64,7 @@ const routes = [
     path: "/three",
     name: "three",
     component: ThreeView,
-  }
+  },
 ]
 
 const router = createRouter({
