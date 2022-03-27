@@ -1,56 +1,58 @@
 <template>
-  <h1 class="title">{{ passTitle }}</h1>
-  <v-ace-editor
-    class="edit-area"
-    v-model:value="updateContentCode"
-    @init="editorInit"
-    lang="html"
-    theme="monokai"
-  />
-  <div class="label__canvas">{{ labels.canvasLabel }}</div>
-  <div class="label__sample">{{ labels.sampleLabel }}</div>
-  <div>
-    <div class="back" v-html="passContentCode"></div>
-    <div
-      class="sample__back sample__opacity"
-      v-html="passSampleCode"
-      :style="{ opacity: opacityValue }"
-    ></div>
-  </div>
-  <div>
-    <div class="sample__back" v-html="passSampleCode"></div>
-  </div>
-  <div class="opacity-bar">
-    {{ labels.opacityLabel }}
-    <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
-  </div>
-  <div class="how-to__wrapper">
-    <p class="how-to__title">{{ howToTitle }}</p>
-    <ol class="how-to__text">
-      <li v-for="howToText in howToTexts" :key="howToText.index">
-        {{ howToText }}
-      </li>
-    </ol>
-    <p class="how-to__hint">{{ howToHint }}</p>
-  </div>
-  <div class="color-palette">
-    <div
-      class="color-list"
-      v-for="passColorCode in passColorCodes"
-      :key="passColorCode.index"
-    >
+  <div class="background">
+    <h1 class="title">{{ passTitle }}</h1>
+    <v-ace-editor
+      class="edit-area"
+      v-model:value="updateContentCode"
+      @init="editorInit"
+      lang="html"
+      theme="monokai"
+    />
+    <div class="label__canvas">{{ labels.canvasLabel }}</div>
+    <div class="label__sample">{{ labels.sampleLabel }}</div>
+    <div>
+      <div class="back" v-html="passContentCode"></div>
       <div
-        class="color-checker"
-        :style="{
-          backgroundColor: passColorCode,
-        }"
+        class="sample__back sample__opacity"
+        v-html="passSampleCode"
+        :style="{ opacity: opacityValue }"
       ></div>
-      <div class="color-code">{{ passColorCode }}</div>
     </div>
+    <div>
+      <div class="sample__back" v-html="passSampleCode"></div>
+    </div>
+    <div class="opacity-bar">
+      {{ labels.opacityLabel }}
+      <input type="range" min="0" max="1" step="0.01" v-model="opacityValue" />
+    </div>
+    <div class="how-to__wrapper">
+      <p class="how-to__title">{{ howToTitle }}</p>
+      <ol class="how-to__text">
+        <li v-for="howToText in howToTexts" :key="howToText.index">
+          {{ howToText }}
+        </li>
+      </ol>
+      <p class="how-to__hint">{{ howToHint }}</p>
+    </div>
+    <div class="color-palette">
+      <div
+        class="color-list"
+        v-for="passColorCode in passColorCodes"
+        :key="passColorCode.index"
+      >
+        <div
+          class="color-checker"
+          :style="{
+            backgroundColor: passColorCode,
+          }"
+        ></div>
+        <div class="color-code">{{ passColorCode }}</div>
+      </div>
+    </div>
+    <button class="finish-button" @click="updateSavedContentCode">
+      {{ finishButtonText }}
+    </button>
   </div>
-  <button class="finish-button" @click="updateSavedContentCode">
-    {{ finishButtonText }}
-  </button>
 </template>
 
 <script>
@@ -128,6 +130,7 @@ html {
   text-align: left;
   padding: 10px 3rem;
   margin: 0;
+  background: linear-gradient(to right, #e9f5db, #fff);
 }
 .edit-area {
   height: 90vh;
@@ -141,7 +144,6 @@ html {
   left: 80vh;
   width: 120px;
   font-size: 1.2rem;
-  /* background-color: rgb(230, 227, 227); */
 }
 .label__sample {
   position: absolute;
@@ -175,7 +177,7 @@ html {
 .opacity-bar {
   position: absolute;
   top: 69vh;
-  left: 89vh;
+  left: 88.5vh;
   transform: scale(1.7, 1.5);
   font-size: 14px;
 }
@@ -185,14 +187,9 @@ html {
   height: 220px;
   position: absolute;
   top: 80vh;
-  left: 75vh;
+  left: 77vh;
   overflow-y: scroll;
-  /* opacity: 0.5;
-  transition: all 0.3s; */
 }
-/* .how-to__wrapper:hover {
-  opacity: 1;
-} */
 .how-to__title {
   font-size: 1.5rem;
 }
@@ -236,9 +233,9 @@ html {
 .finish-button {
   position: absolute;
   top: 95vh;
-  left: 150vh;
+  left: 137vh;
   height: 60px;
-  width: 160px;
+  width: 280px;
   font-size: 1.5rem;
 }
 </style>

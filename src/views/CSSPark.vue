@@ -1,64 +1,67 @@
 <template>
-  <div class="title__container">
-    <h2 class="title__logo">{{ title.logo }}</h2>
-    <p class="title__text">{{ title.text }}</p>
-  </div>
-  <div class="content__wrapper">
-    <span class="content__title">{{ contentTitle.normal }}</span>
-    <div
-      class="content__container"
-      v-for="content in contents"
-      :key="content.index"
-    >
-      <div
-        @click="
-          toGame(
-            content.docName,
-            content.colorCodes,
-            content.sampleCode,
-            content.contentCode
-          )
-        "
-      >
-        <img
-          class="content__img"
-          :src="content.imagePath"
-          :alt="content.imageAlt"
-        />
-        <p class="content__text">{{ content.text }}</p>
-      </div>
-      <button class="content__record" @click="toRecord(content.docName)">
-        {{ recordText }}
-      </button>
+  <div class="background">
+    <div class="title__container">
+      <h2 class="title__logo">{{ title.logo }}</h2>
+      <img class="title__img" :src="title.imagePath" alt="title.imageAlt" />
+      <p class="title__text">{{ title.text }}</p>
     </div>
-  </div>
-  <div class="content__wrapper">
-    <span class="content__title">{{ contentTitle.extra }}</span>
-    <div
-      class="content__container"
-      v-for="exContent in exContents"
-      :key="exContent.index"
-    >
+    <div class="content__wrapper">
+      <span class="content__title">{{ contentTitle.normal }}</span>
       <div
-        @click="
-          toGame(
-            exContent.docName,
-            exContent.colorCodes,
-            exContent.sampleCode,
-            exContent.contentCode
-          )
-        "
+        class="content__container"
+        v-for="content in contents"
+        :key="content.index"
       >
-        <img
-          class="content__img"
-          :src="exContent.imagePath"
-          :alt="exContent.imageAlt"
-        />
-        <p class="content__text">{{ exContent.text }}</p>
+        <div
+          @click="
+            toGame(
+              content.docName,
+              content.colorCodes,
+              content.sampleCode,
+              content.contentCode
+            )
+          "
+        >
+          <img
+            class="content__img"
+            :src="content.imagePath"
+            :alt="content.imageAlt"
+          />
+          <p class="content__text">{{ content.text }}</p>
+        </div>
+        <button class="content__record" @click="toRecord(content.docName)">
+          {{ recordText }}
+        </button>
       </div>
-      <button class="content__record" @click="toRecord(exContent.docName)">
-        {{ recordText }}
-      </button>
+    </div>
+    <div class="content__wrapper">
+      <span class="content__title">{{ contentTitle.extra }}</span>
+      <div
+        class="content__container"
+        v-for="exContent in exContents"
+        :key="exContent.index"
+      >
+        <div
+          @click="
+            toGame(
+              exContent.docName,
+              exContent.colorCodes,
+              exContent.sampleCode,
+              exContent.contentCode
+            )
+          "
+        >
+          <img
+            class="content__img"
+            :src="exContent.imagePath"
+            :alt="exContent.imageAlt"
+          />
+          <p class="content__text">{{ exContent.text }}</p>
+        </div>
+        <button class="content__record" @click="toRecord(exContent.docName)">
+          {{ recordText }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +73,8 @@ export default {
       title: {
         logo: "CSS Park",
         text: "-コードを書いて例題のイメージに近づけよう！( 全12ステージ )",
+        imagePath: require("@/assets/SunImg.png"),
+        imageAlt: "太陽さんさん",
       },
       contentTitle: {
         normal: "Contents Lv.1~8",
@@ -871,25 +876,53 @@ html {
 *::after {
   box-sizing: inherit;
 }
+.background {
+  background-color: #e9f5db;
+}
 .title__container {
-  background-color: #afcbff;
+  background: linear-gradient(#d4e2c1, #e7f3da);
+  text-align: left;
 }
 .title__logo {
   font-size: 3.5rem;
-  text-align: left;
-  margin-left: 30px;
+  margin: 0 0 0 30px;
+  display: inline-block;
+  position: relative;
+}
+.title__logo:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 120%;
+  height: 7px;
+  background: repeating-linear-gradient(
+    -45deg,
+    green,
+    #6ad1c8 2px,
+    #e9f5db 2px,
+    #e9f5db 4px
+  );
+}
+.title__img {
+  display: inline-block;
+  width: 40px;
+  margin-left: 20px;
+  margin-top: 5px;
+  vertical-align: top;
 }
 .title__text {
   font-size: 1.5rem;
   text-align: left;
   margin-left: 100px;
+  margin-bottom: 70px;
 }
 .content__wrapper {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: #faffff;
-  border: 1px solid black;
+  background-color: #f7faf4;
+  border: 1px solid #303030;
   border-radius: 5px;
   padding: 35px 0;
   margin: 50px 20px;
@@ -900,11 +933,12 @@ html {
   position: absolute;
   top: -1.3rem;
   left: 3%;
-  background-color: #faffff;
+  background: linear-gradient(#e9f5db, #f7faf4);
   padding: 0 1rem 0 1rem;
 }
 .content__container {
-  border: 1px solid black;
+  border: 1px solid #303030;
+  background-color: #ffffff;
   margin: 30px 30px;
   border-radius: 5px;
   opacity: 0.9;
@@ -916,11 +950,11 @@ html {
   transform: scale(1.05, 1.05);
 }
 .content__container * {
-  color: black;
+  color: #303030;
   text-decoration: none;
 }
 .content__img {
-  border: 1px solid black;
+  border: 1px solid #303030;
   border-radius: 5px;
   margin: 5px 5px 0 5px;
   width: 250px;
@@ -942,6 +976,6 @@ html {
   color: #696969;
 }
 .content__record:hover {
-  color: black;
+  color: #303030;
 }
 </style>

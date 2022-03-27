@@ -1,5 +1,6 @@
 <template>
   <nav>
+    <router-link to="/top">Top</router-link> |
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link> |
     <router-link to="/css-park">css-park</router-link>
@@ -13,7 +14,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #303030;
 }
 
 body {
@@ -21,6 +22,7 @@ body {
 }
 nav {
   padding: 30px;
+  background: #415a77;
 }
 
 nav a {

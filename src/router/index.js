@@ -4,8 +4,14 @@ import CSSPark from "../views/CSSPark.vue"
 import GameView from "../views/GameView.vue"
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
+import TopView from "../views/TopView.vue"
 
 const routes = [
+  {
+    path: "/top",
+    name: "top",
+    component: TopView,
+  },
   {
     path: "/",
     name: "home",
