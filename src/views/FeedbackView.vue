@@ -44,11 +44,11 @@ export default {
 
 <style scoped>
 .background {
-  background: linear-gradient(#f7faf4, #fff);
+  background: linear-gradient(#eff7e8, #fff);
 }
 
 .title__container {
-  background-color: #e9f5db;
+  background-color: #e4f3d2;
 }
 .title__logo {
   padding-top: 20px;
@@ -64,7 +64,7 @@ export default {
   height: 420px;
   width: 1250px;
   border: 1px solid #303030;
-  background-color: #fff;
+  background: linear-gradient(#f7faf4, #fff);
   position: relative;
 }
 .content__title {
@@ -72,7 +72,7 @@ export default {
   top: -4%;
   left: 5%;
   font-size: 1.3rem;
-  background: linear-gradient(#f7faf4, #fff);
+  background: linear-gradient(#eff7e8, #f7faf4);
   padding: 0 10px;
 }
 .edit-area {

@@ -882,6 +882,7 @@ html {
 .title__container {
   background: linear-gradient(#d4e2c1, #e7f3da);
   text-align: left;
+  padding-top: 20px;
 }
 .title__logo {
   font-size: 3.5rem;

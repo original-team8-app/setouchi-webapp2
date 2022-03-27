@@ -2,7 +2,6 @@
   <div class="background">
     <header class="header">
       <div class="title">{{ title }}</div>
-      <button class="login-button">{{ loginText }}</button>
     </header>
     <main>
       <div class="contents" v-for="content in contents" :key="content.index">
@@ -25,7 +24,6 @@ export default {
   data() {
     return {
       title: "Setouchi Web App仮",
-      loginText: "ログイン",
       contents: [
         {
           imgPath: require("@/assets/Img1.jpeg"),
@@ -77,33 +75,54 @@ html {
   margin: 30px auto 80px auto;
   animation: titleAnimation 1.5s;
 }
-.login-button {
-  font-size: 1rem;
-}
 main {
+  max-width: 900px;
   width: 100%;
   margin: 0 auto;
 }
 .contents {
   position: relative;
-  margin: 100px auto;
+}
+.contents:not(:last-of-type) {
+  margin-bottom: 200px;
 }
 .contents:nth-of-type(odd) .contents__img {
-  transform: translate(-300px, 0);
+  transform: translate(-200px, 0);
 }
 .contents:nth-of-type(even) .contents__img {
-  transform: translate(300px, 0);
+  transform: translate(200px, 0);
 }
 .contents:nth-of-type(odd) .contents__text {
   right: 0;
 }
+.contents:nth-of-type(even) .contents__text {
+  align-items: flex-start;
+}
 .contents__img {
   width: 600px;
+  border-radius: 10px;
 }
 .contents__text {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   position: absolute;
   top: 40px;
+}
+.contents__mainTx {
+  font-size: 3rem;
+  background-color: rgba(185, 230, 190, 0.8);
+  padding: 10px 0;
+  margin: 0 auto;
+  width: 400px;
+  border-radius: 5px;
+  /* letter-spacing: 5px; */
+}
+.contents__subTx {
+  font-size: 1.5rem;
+  background-color: rgba(255, 228, 196, 0.8);
+  padding: 10px 20px;
+  width: 300px;
+  border-radius: 5px;
 }
 </style>

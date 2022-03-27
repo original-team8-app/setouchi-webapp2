@@ -35,7 +35,7 @@ export default {
   data() {
     return {
       title: {
-        logo: "前回を振り返る",
+        logo: "前回の振り返り",
         text: "",
       },
       contentTitle: "前回の記録",
@@ -53,11 +53,11 @@ export default {
 
 <style scoped>
 .background {
-  background: linear-gradient(#f7faf4, #fff);
+  background: linear-gradient(#eff7e8, #fff);
 }
 
 .title__container {
-  background-color: #e9f5db;
+  background-color: #e4f3d2;
 }
 .title__logo {
   padding: 20px 0;
@@ -69,7 +69,7 @@ export default {
   height: 420px;
   width: 1250px;
   border: 1px solid #303030;
-  background-color: #fff;
+  background: linear-gradient(#f7faf4, #fff);
   position: relative;
 }
 .content__title {
@@ -77,7 +77,7 @@ export default {
   top: -4%;
   left: 5%;
   font-size: 1.3rem;
-  background: linear-gradient(#f7faf4, #fff);
+  background: linear-gradient(#eff7e8, #f7faf4);
   padding: 0 10px;
 }
 .edit-area {
