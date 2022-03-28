@@ -5,17 +5,23 @@
       <router-link :to="link.path" v-for="link in links" :key="link.index">
         {{ link.text }}
       </router-link>
-      <button class="login-button">{{ loginText }}</button>
+      <div>
+        <button v-if="isLoggin" v-on:click="logOut">ログアウト</button>
+        <button v-else v-on:click="logIn">まずはログイン</button>
+      </div>
     </div>
   </nav>
   <router-view />
 </template>
 <script>
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+
 export default {
   data() {
     return {
       title: "タイトル",
       loginText: "Googleでログイン",
+      isLoggin: false,
       links: [
         {
           path: "/top",
@@ -35,6 +41,35 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    logIn() {
+      const provider = new GoogleAuthProvider()
+      provider.addScope("https://www.googleapis.com/auth/contacts.readonly")
+      const auth = getAuth()
+      auth.languageCode = "it"
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const credential = GoogleAuthProvider.credentialFromResult(result)
+          const token = credential.accessToken
+          console.log(token)
+          result.user
+          if (result.user) {
+            this.isLoggin = true
+          }
+          this.$router.push("/loglog")
+        })
+        .catch((error) => {
+          error.code
+          error.message
+          error.email
+          GoogleAuthProvider.credentialFromError(error)
+          // ...
+        })
+    },
+    logOut() {
+      this.isLoggin = false
+    },
   },
 }
 </script>
