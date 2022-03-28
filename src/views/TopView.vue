@@ -33,11 +33,14 @@
 </template>
 
 <script>
+import swal from "sweetalert"
+
 export default {
-  props: ["deliveryLoginData"],
+  props: ["relayLoginData"],
   data() {
     return {
       title: "Setouchi Web App仮",
+      isLogin: this.relayLoginData,
       contents: [
         {
           name: "home",
@@ -69,11 +72,15 @@ export default {
   },
   methods: {
     toGames(game) {
-      this.$router.push({ name: game })
+      if (this.isLogin) {
+        this.$router.push({ name: game })
+      } else {
+        swal("まずはログインしてください！")
+      }
     },
-  },
-  created() {
-    console.log(this.deliveryLoginData)
+    created() {
+      console.log(this.isLogin)
+    },
   },
 }
 </script>

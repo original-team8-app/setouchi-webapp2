@@ -70,7 +70,7 @@ export default {
           }
           swal("ログインに成功しました！")
           this.$router.push({
-            name: "top",
+            name: "login-logout",
             params: { deliveryLoginData: this.isLoggin },
           })
         })
@@ -85,12 +85,11 @@ export default {
       this.isLoggin = false
       swal("ログアウトしました！")
       this.$router.push({
-        name: "top",
+        name: "login-logout",
         params: { deliveryLoginData: this.isLoggin },
       })
     },
   },
-  created() {},
 }
 </script>
 
@@ -131,7 +130,7 @@ nav a.router-link-exact-active {
   display: flex;
   align-items: center;
 }
-.disabled {
+.disabled:not(:first-of-type) {
   text-decoration: line-through;
   pointer-events: none;
 }

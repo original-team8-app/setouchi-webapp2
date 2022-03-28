@@ -1,16 +1,23 @@
 import { createRouter, createWebHistory } from "vue-router"
+import TopView from "../views/TopView.vue"
+import RelayLoginData from "../views/RelayLoginData.vue"
 import HomeView from "../views/HomeView.vue"
 import CSSPark from "../views/CSSPark.vue"
 import GameView from "../views/GameView.vue"
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
-import TopView from "../views/TopView.vue"
 
 const routes = [
   {
     path: "/top",
     name: "top",
     component: TopView,
+    props: true,
+  },
+  {
+    path: "/login-logout",
+    name: "login-logout",
+    component: RelayLoginData,
     props: true,
   },
   {
