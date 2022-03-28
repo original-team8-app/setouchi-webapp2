@@ -169,7 +169,7 @@ main {
   border-radius: 5px;
 }
 footer {
-  height: 150px;
+  height: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
