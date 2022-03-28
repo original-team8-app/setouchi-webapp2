@@ -2,7 +2,12 @@
   <nav>
     <h1 class="title">{{ title }}</h1>
     <div class="container">
-      <router-link :to="link.path" v-for="link in links" :key="link.index">
+      <router-link
+        :to="link.path"
+        v-for="link in links"
+        :key="link.index"
+        :class="{ disabled: !isLoggin }"
+      >
         {{ link.text }}
       </router-link>
       <div>
@@ -71,7 +76,6 @@ export default {
           error.message
           error.email
           GoogleAuthProvider.credentialFromError(error)
-          // ...
         })
     },
     logOut() {
@@ -80,6 +84,7 @@ export default {
       this.$router.push("/top")
     },
   },
+  created() {},
 }
 </script>
 
@@ -119,6 +124,10 @@ nav a.router-link-exact-active {
 .container {
   display: flex;
   align-items: center;
+}
+.disabled {
+  text-decoration: line-through;
+  pointer-events: none;
 }
 .login-button {
   margin: 0 15px;
