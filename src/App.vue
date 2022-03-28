@@ -6,8 +6,12 @@
         {{ link.text }}
       </router-link>
       <div>
-        <button v-if="isLoggin" v-on:click="logOut">ログアウト</button>
-        <button v-else v-on:click="logIn">まずはログイン</button>
+        <button class="login-button" v-if="isLoggin" v-on:click="logOut">
+          {{ logoutText }}
+        </button>
+        <button class="login-button" v-else v-on:click="logIn">
+          {{ loginText }}
+        </button>
       </div>
     </div>
   </nav>
@@ -15,12 +19,14 @@
 </template>
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import swal from "sweetalert"
 
 export default {
   data() {
     return {
       title: "タイトル",
-      loginText: "Googleでログイン",
+      loginText: "まずはログイン",
+      logoutText: "ログアウト",
       isLoggin: false,
       links: [
         {
@@ -57,7 +63,8 @@ export default {
           if (result.user) {
             this.isLoggin = true
           }
-          this.$router.push("/loglog")
+          swal("ログインに成功しました！")
+          this.$router.push("/top")
         })
         .catch((error) => {
           error.code
@@ -69,6 +76,8 @@ export default {
     },
     logOut() {
       this.isLoggin = false
+      swal("ログアウトしました！")
+      this.$router.push("/top")
     },
   },
 }
@@ -113,7 +122,8 @@ nav a.router-link-exact-active {
 }
 .login-button {
   margin: 0 15px;
-  padding: 8px;
+  width: 150px;
+  height: 40px;
   font-size: 1rem;
   border-radius: 5px;
 }
