@@ -64,6 +64,7 @@ export default {
   height: 420px;
   width: 1250px;
   border: 1px solid #303030;
+  border-radius: 10px;
   background: linear-gradient(#f7faf4, #fff);
   position: relative;
 }

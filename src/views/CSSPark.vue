@@ -1,7 +1,7 @@
 <template>
   <div class="background">
     <div class="title__container">
-      <h2 class="title__logo">{{ title.logo }}</h2>
+      <div class="title__logo">{{ title.logo }}</div>
       <img class="title__img" :src="title.imagePath" alt="title.imageAlt" />
       <p class="title__text">{{ title.text }}</p>
     </div>
@@ -878,15 +878,17 @@ html {
 }
 .background {
   background-color: #e9f5db;
+  min-height: 1880px;
 }
 .title__container {
   background: linear-gradient(#d4e2c1, #e7f3da);
   text-align: left;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 .title__logo {
-  font-size: 3.5rem;
-  margin: 0 0 0 30px;
+  font-size: 4rem;
+  font-weight: bolder;
+  margin: 0 30px 0 50px;
   display: inline-block;
   position: relative;
 }
@@ -907,13 +909,11 @@ html {
 }
 .title__img {
   display: inline-block;
-  width: 40px;
-  margin-left: 20px;
-  margin-top: 5px;
+  width: 50px;
   vertical-align: top;
 }
 .title__text {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-align: left;
   margin-left: 100px;
   margin-bottom: 70px;

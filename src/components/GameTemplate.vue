@@ -134,7 +134,7 @@ html {
 }
 .edit-area {
   height: 90vh;
-  width: 70vh;
+  width: 75vh;
   font-size: 1rem;
   outline: auto;
 }
@@ -183,11 +183,11 @@ html {
 }
 .how-to__wrapper {
   background-color: rgb(230, 227, 227);
-  width: 420px;
-  height: 220px;
+  width: 450px;
+  height: 230px;
   position: absolute;
   top: 80vh;
-  left: 77vh;
+  left: 75vh;
   overflow-y: scroll;
 }
 .how-to__title {
@@ -232,9 +232,9 @@ html {
 }
 .finish-button {
   position: absolute;
-  top: 95vh;
-  left: 137vh;
-  height: 60px;
+  top: 97vh;
+  left: 138vh;
+  height: 70px;
   width: 280px;
   font-size: 1.5rem;
 }

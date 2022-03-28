@@ -27,6 +27,9 @@
       </div>
     </main>
   </div>
+  <footer>
+    <p class="copy-right">(c) 2022 Setouchi Ganguro Revengers</p>
+  </footer>
 </template>
 
 <script>
@@ -91,9 +94,9 @@ html {
 }
 .title {
   font-size: 5rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   display: inline-block;
-  margin: 30px auto 120px auto;
+  margin: 120px auto 140px auto;
   animation: titleAnimation 1.5s;
 }
 @keyframes mainAnimation {
@@ -108,11 +111,12 @@ html {
 }
 main {
   max-width: 950px;
+  height: 1850px;
   width: 100%;
   margin: 0 auto;
   transform: 0;
   opacity: 1;
-  animation: mainAnimation 2.5s;
+  animation: mainAnimation 2s;
 }
 .contents {
   position: relative;
@@ -163,5 +167,12 @@ main {
   padding: 10px 20px;
   width: 300px;
   border-radius: 5px;
+}
+footer {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #415a77;
 }
 </style>
