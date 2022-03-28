@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="nav-title">{{ title }}</h1>
     <div class="container">
       <router-link
         :to="link.path"
@@ -8,7 +8,7 @@
         :key="link.index"
         :class="{ disabled: !isLoggin }"
       >
-        {{ link.text }}
+        {{ link.text }} |
       </router-link>
       <div>
         <button class="login-button" v-if="isLoggin" v-on:click="logOut">
@@ -29,22 +29,18 @@ import swal from "sweetalert"
 export default {
   data() {
     return {
-      title: "タイトル",
+      title: "Codable",
       loginText: "まずはログイン",
       logoutText: "ログアウト",
       isLoggin: false,
       links: [
-        {
-          path: "/top",
-          text: "Top",
-        },
         {
           path: "/",
           text: "Home",
         },
         {
           path: "/about",
-          text: "About",
+          text: "Mayor CSS",
         },
         {
           path: "/css-park",
@@ -115,7 +111,7 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
-  margin-right: 25px;
+  margin-right: 10px;
   font-size: 1.2rem;
 }
 
@@ -123,15 +119,19 @@ nav a.router-link-exact-active {
   color: #303030;
   font-size: 1.3rem;
 }
-.title {
-  margin: 0;
+.nav-title {
+  margin: 0 0 0 20px;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: #303030;
+  font-weight: normal;
 }
 .container {
   display: flex;
   align-items: center;
 }
-.disabled:not(:first-of-type) {
-  text-decoration: line-through;
+.disabled {
+  opacity: 0.5;
   pointer-events: none;
 }
 .login-button {
