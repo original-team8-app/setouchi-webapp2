@@ -12,6 +12,7 @@
     </div>
   </nav>
   <router-view />
+  <!-- <CSSQuizeTemplate /> -->
 </template>
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
