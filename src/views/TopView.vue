@@ -28,7 +28,7 @@
     </main>
   </div>
   <footer>
-    <p class="copy-right">(c) 2022 Setouchi Ganguro Revengers</p>
+    <p>(c) 2022 Setouchi Ganguro Revengers</p>
   </footer>
 </template>
 
@@ -174,5 +174,8 @@ footer {
   justify-content: center;
   align-items: center;
   background-color: #415a77;
+}
+footer p {
+  font-size: 1.3rem;
 }
 </style>
