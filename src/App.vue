@@ -69,7 +69,10 @@ export default {
             this.isLoggin = true
           }
           swal("ログインに成功しました！")
-          this.$router.push("/top")
+          this.$router.push({
+            name: "top",
+            params: { deliveryLoginData: this.isLoggin },
+          })
         })
         .catch((error) => {
           error.code
@@ -81,7 +84,10 @@ export default {
     logOut() {
       this.isLoggin = false
       swal("ログアウトしました！")
-      this.$router.push("/top")
+      this.$router.push({
+        name: "top",
+        params: { deliveryLoginData: this.isLoggin },
+      })
     },
   },
   created() {},

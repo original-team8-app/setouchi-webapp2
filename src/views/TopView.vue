@@ -34,6 +34,7 @@
 
 <script>
 export default {
+  props: ["deliveryLoginData"],
   data() {
     return {
       title: "Setouchi Web App仮",
@@ -70,6 +71,9 @@ export default {
     toGames(game) {
       this.$router.push({ name: game })
     },
+  },
+  created() {
+    console.log(this.deliveryLoginData)
   },
 }
 </script>

@@ -11,6 +11,7 @@ const routes = [
     path: "/top",
     name: "top",
     component: TopView,
+    props: true,
   },
   {
     path: "/",
