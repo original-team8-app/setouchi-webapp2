@@ -1,21 +1,23 @@
 <template>
-  <div class="title__container">
-    <div class="title__logo">{{ title.logo }}</div>
-    <div class="title__text">{{ title.text }}</div>
+  <div class="background">
+    <div class="title__container">
+      <div class="title__logo">{{ title.logo }}</div>
+      <div class="title__text">{{ title.text }}</div>
+    </div>
+    <div class="content__container">
+      <div class="content__title">{{ contentTitle }}</div>
+      <v-ace-editor
+        class="edit-area"
+        :value="deliveryData"
+        lang="html"
+        theme="monokai"
+      />
+      <div class="back" v-html="deliveryData"></div>
+    </div>
+    <router-link to="/css-park">
+      <button class="finish-button">{{ buttonText }}</button>
+    </router-link>
   </div>
-  <div class="content__container">
-    <div class="content__title">{{ contentTitle }}</div>
-    <v-ace-editor
-      class="edit-area"
-      :value="deliveryData"
-      lang="html"
-      theme="monokai"
-    />
-    <div class="back" v-html="deliveryData"></div>
-  </div>
-  <router-link to="/css-park">
-    <button class="finish-button">{{ buttonText }}</button>
-  </router-link>
 </template>
 
 <script>
@@ -41,24 +43,29 @@ export default {
 </script>
 
 <style scoped>
+.background {
+  background: linear-gradient(#eff7e8, #fff);
+}
+
 .title__container {
-  background-color: pink;
+  background-color: #e4f3d2;
 }
 .title__logo {
+  padding-top: 20px;
   font-size: 2rem;
-  text-align: justify;
-  padding-left: 4rem;
+  text-align: center;
 }
 .title__text {
-  font-size: 1.5rem;
-  text-align: justify;
-  padding-left: 6rem;
+  font-size: 1.3rem;
+  text-align: center;
 }
 .content__container {
   margin: 50px auto;
   height: 420px;
-  width: 1150px;
-  border: 1px solid black;
+  width: 1250px;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  background: linear-gradient(#f7faf4, #fff);
   position: relative;
 }
 .content__title {
@@ -66,22 +73,22 @@ export default {
   top: -4%;
   left: 5%;
   font-size: 1.3rem;
-  background-color: white;
+  background: linear-gradient(#eff7e8, #f7faf4);
   padding: 0 10px;
 }
 .edit-area {
   position: absolute;
   top: 7vh;
-  left: 12vh;
+  left: 15vh;
   height: 320px;
-  width: 70vh;
+  width: 75vh;
   font-size: 1rem;
   outline: auto;
 }
 .back {
   position: absolute;
   top: 7vh;
-  left: 93vh;
+  left: 105vh;
   height: 300px;
   width: 300px;
   outline: auto;
@@ -89,10 +96,10 @@ export default {
 }
 .finish-button {
   height: 70px;
-  width: 230px;
-  font-size: 1.3rem;
+  width: 350px;
+  font-size: 1.5rem;
   position: absolute;
-  top: 90vh;
-  left: 130vh;
+  top: 89vh;
+  left: 125vh;
 }
 </style>
