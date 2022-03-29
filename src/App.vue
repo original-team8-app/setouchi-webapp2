@@ -1,5 +1,7 @@
 <template>
   <nav>
+
+
     <h1 class="title">{{ title }}</h1>
     <div class="container">
       <router-link :to="link.path" v-for="link in links" :key="link.index">
@@ -10,6 +12,7 @@
         <button v-else v-on:click="logIn">まずはログイン</button>
       </div>
     </div>
+
   </nav>
   <router-view />
   <!-- <CSSQuizeTemplate /> -->

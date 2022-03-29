@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router"
 import HomeView from "../views/HomeView.vue"
+
+
+
 import firstQuestion from "../views/css_questions/first_question.vue"
 import secondQuestion from "../views/css_questions/second_question.vue"
 import thirdQuestion from "../views/css_questions/third_question.vue"
@@ -8,8 +11,11 @@ import fifithquestion from "../views/css_questions/fifth_question.vue"
 import sixthquestion from "../views/css_questions/6th_question.vue"
 import seventhquestion from "../views/css_questions/7th_question.vue"
 import eigthquestion from "../views/css_questions/8th_question.vue"
+
+
 import CSSPark from "../views/CSSPark.vue"
 import GameView from "../views/GameView.vue"
+
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
 import TopView from "../views/TopView.vue"
