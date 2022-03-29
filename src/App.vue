@@ -36,11 +36,11 @@ export default {
       isLoggin: false,
       links: [
         {
-          path: "/",
+          path: "/shortcut-quiz",
           text: "Shortcut Quiz",
         },
         {
-          path: "/about",
+          path: "/mayor-css",
           text: "Mayor CSS",
         },
         {
