@@ -38,7 +38,7 @@
           <h3>{{ fullScore / 10 }} 問中 {{ this.reScore }} 問正解！</h3>
           <h4 class="win">脱出成功！！</h4>
           <img
-            src="@/assets/escape.png"
+            :src="require('@/assets/escape.png')"
             alt="脱出成功！"
             class="escapeImg"
             v-if="completed"
@@ -48,7 +48,7 @@
           <h4 class="lose">脱出失敗…</h4>
 
           <img
-            src="@/assets/oboreru.png"
+            :src="require('@/assets/oboreru.png')"
             alt="脱出失敗"
             class="notescapeImg"
             v-if="completed"
@@ -104,7 +104,11 @@
         </button>
       </div>
       <div class="keyboad">
-        <img src="@/assets/keyboad.png" alt="キーボード" class="keyboadImg" />
+        <img
+          :src="require('@/assets/keyboad.png')"
+          alt="キーボード"
+          class="keyboadImg"
+        />
       </div>
       <!-- <div class="gaugeWrapper mb-20">
         <div v-bind:style="styleObject" class="gauge"></div>
