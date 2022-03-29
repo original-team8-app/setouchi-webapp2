@@ -17,13 +17,15 @@
     </div>
     <div v-if="startFlag != true" class="middleBox">
       <button class="startButton mb-20" @click="gameStart">GAME START</button>
-      <h4>-説明-</h4>
-      <p>
-        Visual Studio
-        Codeのショートカットをマスターして開発をスムーズに進めよう！<br />Visual
-        Studio
-        Code(VSCode)は多くのプログラミング言語に対応しているソースコードエディタだ。<br />このゲームでは覚えておくとプログラミング効率がUPするお役立ちショートカットをクイズで出題！<br />基本のショートカットからマニアックなものまで開発に欠かせないショートカットを厳選。<br />全15問で7問以上正解でクリアだ！
-      </p>
+      <div class="expla">
+        <h4 class="explaTitle">-説明-</h4>
+        <p class="explaText">
+          Visual Studio
+          Codeのショートカットをマスターして開発をスムーズに進めよう！<br />Visual
+          Studio
+          Code(VSCode)は多くのプログラミング言語に対応しているソースコードエディタだ。<br />このゲームでは覚えておくとプログラミング効率がUPするお役立ちショートカットをクイズで出題！<br />基本のショートカットからマニアックなものまで開発に欠かせないショートカットを厳選。<br />全10問で7問以上正解でクリアだ！
+        </p>
+      </div>
     </div>
     <!-- <div class="result" v-if="current_question_counts > 2">
       <h2>結果</h2>
@@ -33,29 +35,30 @@
     <div class="offset-3 col-6" v-if="completed">
       <div class="card">
         <div v-if="score > 60">
-          <p class="badge">結果</p>
           <h3>{{ fullScore / 10 }} 問中 {{ this.reScore }} 問正解！</h3>
-          <h4>脱出成功！！</h4>
+          <h4 class="win">脱出成功！！</h4>
           <img
-            src="@/assets/escape.jpg"
+            :src="require('@/assets/escape.png')"
             alt="脱出成功！"
             class="escapeImg"
             v-if="completed"
           />
         </div>
         <div v-else>
-          <h4>脱出失敗…</h4>
+          <h4 class="lose">脱出失敗…</h4>
+
           <img
-            src="@/assets/oboreru.png"
+            :src="require('@/assets/oboreru.png')"
             alt="脱出失敗"
             class="notescapeImg"
             v-if="completed"
           />
         </div>
+        <p class="badge">結果</p>
         <div v-for="(question, index) in this.questions" :key="question">
           <h4 class="card-title">{{ question.question }}</h4>
           <ul>
-            <li v-for="answer in question.answers" :key="answer">
+            <li v-for="answer in question.answers" :key="answer" class="list">
               {{ answer }}
             </li>
           </ul>
@@ -68,7 +71,7 @@
           <hr />
         </div>
         <div>
-          <button @click="retryButton">リトライ</button>
+          <button @click="retryButton" class="retrybtn">もう一度遊ぶ</button>
         </div>
       </div>
     </div>
@@ -85,7 +88,8 @@
           <img src="@/assets/basyabasya.jpg" alt="残念" class="zannenImg" />
         </div>
       </div> -->
-      <p class="badge badge-dark">第 {{ questionIndex + 1 }} 問</p>
+      <div class="badge badge-dark">第 {{ questionIndex + 1 }} 問</div>
+
       <div class="question mb-20">
         {{ currentQuestion.question }}
       </div>
@@ -94,12 +98,17 @@
           v-bind:key="answer"
           v-for="(answer, index) in currentQuestion.answers"
           @click="multipulHandler(index)"
+          class="btnChoice"
         >
           {{ index + 1 }}. {{ answer }}
         </button>
       </div>
       <div class="keyboad">
-        <img src="@/assets/keyboad.png" alt="キーボード" class="keyboadImg" />
+        <img
+          :src="require('@/assets/keyboad.png')"
+          alt="キーボード"
+          class="keyboadImg"
+        />
       </div>
       <!-- <div class="gaugeWrapper mb-20">
         <div v-bind:style="styleObject" class="gauge"></div>
@@ -343,6 +352,11 @@ export default {
   position: relative;
   font-size: 50px;
 }
+
+.expla {
+  background-color: aliceblue;
+}
+
 .firstImg {
   width: 200px;
 }
@@ -366,7 +380,6 @@ export default {
 .mb-20 {
   margin-bottom: 20px;
 }
-
 .marker {
   width: 100%;
   height: 35%;
@@ -388,11 +401,47 @@ export default {
 .startButton:hover {
   opacity: 0.7;
 }
-.gauge {
-  height: 12px;
+.question {
+  font-size: 40px;
 }
-.gaugeWrapper {
-  border: 1px solid;
-  height: 12px;
+.badge {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.btnChoice {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  color: #799dec;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.32), 0px 1px 0px #6182ca,
+    0px 2px 0px #4f6aa7, 0px 3px 0px #5470ad;
+}
+.btnChoice:active {
+  top: 4px;
+  text-shadow: none;
+}
+.retrybtn {
+  background-color: teal;
+  color: #fff;
+  padding: 4px 60px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  cursor: pointer;
+  height: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.lose {
+  font-size: 40px;
+}
+.win {
+  font-size: 40px;
+}
+.question-count {
+  font-size: 40px;
+}
+.list {
+  display: initial;
 }
 </style>
