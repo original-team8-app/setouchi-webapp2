@@ -1,7 +1,7 @@
 <template>
   <nav>
     <h1 class="nav-title">{{ title }}</h1>
-    <div class="container">
+    <div class="nav-container">
       <router-link
         :to="link.path"
         v-for="link in links"
@@ -126,7 +126,7 @@ nav a.router-link-exact-active {
   letter-spacing: 0.1rem;
   color: #303030;
 }
-.container {
+.nav-container {
   display: flex;
   align-items: center;
 }
