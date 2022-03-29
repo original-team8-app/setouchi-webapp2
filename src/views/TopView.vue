@@ -54,7 +54,7 @@ export default {
         },
         {
           name: "about",
-          imgPath: require("@/assets/Img1.jpeg"),
+          imgPath: require("@/assets/Image_town-illust_10-1024x206.png"),
           altText: "",
           mainTx: "Mayor CSS",
           bgColor: "rgba(165, 220, 220, 0.6)",
