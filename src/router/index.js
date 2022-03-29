@@ -17,7 +17,7 @@ import RecordView from "../views/RecordView.vue"
 
 const routes = [
   {
-    path: "/top",
+    path: "/",
     name: "top",
     component: TopView,
     props: true,
@@ -29,12 +29,12 @@ const routes = [
     props: true,
   },
   {
-    path: "/",
+    path: "/shortcut-quiz",
     name: "home",
     component: HomeView,
   },
   {
-    path: "/about",
+    path: "/mayor-css",
     name: "about",
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route

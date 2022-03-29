@@ -47,7 +47,7 @@ export default {
           name: "home",
           imgPath: require("@/assets/Img1.jpeg"),
           altText: "",
-          mainTx: "Quiz",
+          mainTx: "Shortcut Quiz",
           bgColor: "rgba(255, 210, 120, 0.6)",
           subTx:
             "初級のクイズ。便利なショートカットキーがたくさん覚えられるよ。",
