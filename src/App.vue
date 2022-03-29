@@ -37,7 +37,7 @@ export default {
       links: [
         {
           path: "/",
-          text: "Home",
+          text: "Shortcut Quiz",
         },
         {
           path: "/about",
