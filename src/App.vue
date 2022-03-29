@@ -124,7 +124,6 @@ nav a.router-link-exact-active {
   font-size: 2rem;
   letter-spacing: 0.1rem;
   color: #303030;
-  font-weight: normal;
 }
 .container {
   display: flex;
