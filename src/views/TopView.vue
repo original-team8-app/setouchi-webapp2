@@ -45,7 +45,7 @@ export default {
       contents: [
         {
           name: "home",
-          imgPath: require("@/assets/Img1.jpeg"),
+          imgPath: require("@/assets/shortCut.png"),
           altText: "",
           mainTx: "Shortcut Quiz",
           bgColor: "rgba(255, 210, 120, 0.6)",
@@ -58,7 +58,7 @@ export default {
           altText: "",
           mainTx: "Mayor CSS",
           bgColor: "rgba(165, 220, 220, 0.6)",
-          subTx: "中級のゲーム。flexboxの使い方について楽しく学ぼう！。",
+          subTx: "中級のゲーム。CSSのレイアウト方法について楽しく学ぼう！。",
         },
         {
           name: "css-park",
