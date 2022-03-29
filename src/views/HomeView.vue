@@ -9,7 +9,7 @@
         無人島に遭難してしまった！<br />島から脱出するには問題を解いて船を完成させよう！<br />
       </p>
       <img
-        src="@/assets/uninhabitedIsland.png"
+        v-bind:src="require('@/assets/uninhabitedIsland.png')"
         alt="無人島で遭難中"
         class="firstImg mb-20"
         v-if="startFlag != true"
@@ -46,6 +46,7 @@
         </div>
         <div v-else>
           <h4 class="lose">脱出失敗…</h4>
+
           <img
             src="@/assets/oboreru.png"
             alt="脱出失敗"
@@ -88,6 +89,7 @@
         </div>
       </div> -->
       <div class="badge badge-dark">第 {{ questionIndex + 1 }} 問</div>
+
       <div class="question mb-20">
         {{ currentQuestion.question }}
       </div>
@@ -346,9 +348,11 @@ export default {
   position: relative;
   font-size: 50px;
 }
+
 .expla {
   background-color: aliceblue;
 }
+
 .firstImg {
   width: 200px;
 }

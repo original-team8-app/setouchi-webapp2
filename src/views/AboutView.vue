@@ -1,10 +1,12 @@
 <template>
   <v-app>
-    <section>
+    <section id="titleSpace">
       <img
         class="carIcon"
         v-bind:src="require('@/assets/Image_town-illust_10-1024x206.png')"
       />
+
+      <h1 class="gameTitle">Mayor CSS</h1>
     </section>
     <div id="about">
       <h1>CSSの使い方を覚えよう！</h1>
@@ -95,8 +97,16 @@ export default {
 </script>
 
 <style scoped>
+#titleSpace {
+  background-color: f9c784;
+}
 .about {
   background-color: green;
+}
+
+.gameTitle {
+  font-family: "Sacramento", cursive;
+  font-size: 450%;
 }
 
 #card__list {
