@@ -14,24 +14,6 @@
         class="firstImg mb-20"
         v-if="startFlag != true"
       />
-      <div class="clear" v-if="completed">
-        <h4>脱出成功！！</h4>
-        <img
-          src="@/assets/escape.jpg"
-          alt="脱出成功！"
-          class="escapeImg"
-          v-if="completed"
-        />
-      </div>
-      <div class="notclear" v-if="completed">
-        <h4>脱出失敗…</h4>
-        <img
-          src="@/assets/oboreru.png"
-          alt="脱出失敗"
-          class="notescapeImg"
-          v-if="completed"
-        />
-      </div>
     </div>
     <div v-if="startFlag != true" class="middleBox">
       <button class="startButton mb-20" @click="gameStart">GAME START</button>
@@ -50,42 +32,59 @@
       <p>脱出成功！！</p> -->
     <div class="offset-3 col-6" v-if="completed">
       <div class="card">
-        <div class="card-body">
+        <div v-if="score > 60">
           <p class="badge">結果</p>
-          <div v-for="(question, index) in this.questions" :key="question">
-            <h4 class="card-title">{{ question.question }}</h4>
-            <ul>
-              <li v-for="answer in question.answers" :key="answer">
-                {{ answer }}
-              </li>
-            </ul>
-            <span v-if="question.answer == answers[index]">正解 ⭕️ </span>
-            <span v-else
-              >不正解 ❌ <br />正解は「{{
-                question.answers[question.answer]
-              }}」でした。</span
-            >
-            <hr />
-          </div>
+          <h3>{{ fullScore / 10 }} 問中 {{ this.reScore }} 問正解！</h3>
+          <h4>脱出成功！！</h4>
+          <img
+            src="@/assets/escape.jpg"
+            alt="脱出成功！"
+            class="escapeImg"
+            v-if="completed"
+          />
+        </div>
+        <div v-else>
+          <h4>脱出失敗…</h4>
+          <img
+            src="@/assets/oboreru.png"
+            alt="脱出失敗"
+            class="notescapeImg"
+            v-if="completed"
+          />
+        </div>
+        <div v-for="(question, index) in this.questions" :key="question">
+          <h4 class="card-title">{{ question.question }}</h4>
+          <ul>
+            <li v-for="answer in question.answers" :key="answer">
+              {{ answer }}
+            </li>
+          </ul>
+          <span v-if="question.answer == answers[index]">正解 ⭕️ </span>
+          <span v-else
+            >不正解 ❌ <br />正解は「{{
+              question.answers[question.answer]
+            }}」でした。</span
+          >
+          <hr />
+        </div>
+        <div>
+          <button @click="retryButton">リトライ</button>
         </div>
       </div>
     </div>
-    <div class="jumpBox" v-if="completed">
-      <button>リトライ</button>
-      <button>解説</button>
-      <button>タイトルへ</button>
-    </div>
-    <div v-if="startFlag">
-      <div class="imgBox">
-        <div class="seikai">
+  </div>
+  <div v-if="startFlag">
+    <div class="clear" v-if="!completed">
+      <!-- <div class="imgBox">
+        <div class="seikai" v-if="question.answer == answers[index]">
           <h4>正解！</h4>
           <img src="@/assets/maruta.png" alt="正解" class="seikaiImg" />
         </div>
-        <div class="zannen">
+        <div class="zannen" v-if="question.answer != answers[index]">
           <h4>残念！</h4>
           <img src="@/assets/basyabasya.jpg" alt="残念" class="zannenImg" />
         </div>
-      </div>
+      </div> -->
       <p class="badge badge-dark">第 {{ questionIndex + 1 }} 問</p>
       <div class="question mb-20">
         {{ currentQuestion.question }}
@@ -102,11 +101,11 @@
       <div class="keyboad">
         <img src="@/assets/keyboad.png" alt="キーボード" class="keyboadImg" />
       </div>
-      <div class="gaugeWrapper mb-20">
+      <!-- <div class="gaugeWrapper mb-20">
         <div v-bind:style="styleObject" class="gauge"></div>
-      </div>
+      </div> -->
       <div class="question-count">
-        {{ current_question_counts }} / {{ question_counts }}
+        {{ this.reScore }} / {{ fullScore / 10 }}
       </div>
     </div>
   </div>
@@ -126,6 +125,9 @@ export default {
       question_counts: 0,
       questionIndex: 0,
       answers: [],
+      score: 0,
+      reScore: 0,
+      answerExistList: [],
       questions: [
         {
           question: "選択範囲のコピー",
@@ -215,6 +217,12 @@ export default {
     completed: function () {
       return this.questions.length == this.answers.length
     },
+    // correct: function (index) {
+    //   return this.questions[this.questionIndex].answer == index
+    // },
+    fullScore: function () {
+      return this.questions.length * 10
+    },
   },
   methods: {
     gameStart: function () {
@@ -232,9 +240,90 @@ export default {
     },
     addAnswer: function (index) {
       this.answers.push(index)
-      if (!this.completed) {
-        this.questionIndex++
+      if (this.questions[this.questionIndex].answer == index) {
+        this.score += 10
+        this.reScore += 1
+        console.log(this.score)
       }
+      this.questionIndex++
+    },
+    retryButton: function () {
+      this.startFlag = false
+      this.current_question = ""
+      this.current_question_counts = 0
+      this.question_counts = 0
+      this.questionIndex = 0
+      this.answers = []
+      this.score = 0
+      ;(this.reScore = 0),
+        (this.questions = [
+          {
+            question: "選択範囲のコピー",
+            answers: ["「Ctrl」+「K」", "「Ctrl」+「C」", "「Alt」+「C」"],
+            answer: 1,
+          },
+          {
+            question: "選択範囲の貼り付け",
+            answers: ["「Ctrl」+「P」", "「Alt」+「V」", "「Ctrl」+「V」"],
+            answer: 2,
+          },
+          {
+            question: "すべて選択",
+            answers: ["「Ctrl」+「A」", "「Ctrl」+「Z」", "「Alt」+「A」"],
+            answer: 0,
+          },
+          {
+            question: "検索",
+            answers: ["「Ctrl」+「F」", "「Ctrl」+「K」", "「Alt」+「S」"],
+            answer: 0,
+          },
+          {
+            question: "末尾までの文章を選択",
+            answers: ["「Ctrl」+「E」", "「Ctrl」+「E」", "「Shift」+「End」"],
+            answer: 2,
+          },
+          {
+            question: "「Ctrl」+「X」",
+            answers: ["ズームイン", "選択範囲の切り取り", "選択行を削除"],
+            answer: 1,
+          },
+          {
+            question: "「Ctrl」+「Shift」+「P」",
+            answers: [
+              "ページ単位で上下に移動",
+              "カーソル行を下に移動",
+              "コマンドパレットを開く",
+            ],
+            answer: 2,
+          },
+          {
+            question: "「Ctrl」+「/」",
+            answers: [
+              "行をコメントアウト・コメント解除",
+              "単語単位でカーソル移動",
+              "選択部分の実装へ移動する",
+            ],
+            answer: 0,
+          },
+          {
+            question: "「Shift」+「Alt」+「F」",
+            answers: [
+              "前を検索",
+              "コードをきれいに整える",
+              "新しいファイルを開く",
+            ],
+            answer: 1,
+          },
+          {
+            question: "「Ctrl」+「|」",
+            answers: [
+              "選択部分の定義をプレビュー表示",
+              "文章の末尾にカーソル移動",
+              "画面の2分割",
+            ],
+            answer: 2,
+          },
+        ])
     },
     mounted: function () {
       this.current_question = this.questions[0]
