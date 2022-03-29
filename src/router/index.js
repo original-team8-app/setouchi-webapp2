@@ -1,15 +1,33 @@
-import HomeView from "../views/shortcut/HomeView.vue"
-import ThreeView from "../views/shortcut/HomeView.vue"
-import firstQuestion from "../views/css_questions/first-question.vue"
-import Lv1_Leaf from "../views/Lv1_Leaf.vue"
-import Lv2_Cylinder from "../views/Lv2_Cylinder.vue"
-import Lv3_CancelButton from "../views/Lv3_CancelButton.vue"
-import Lv4_UnknownIcon from "../views/Lv4_UnknownIcon.vue"
-import Lv5_Triangle from "../views/Lv5_Triangle.vue"
-import Lv6_Infinity from "../views/Lv6_Infinity.vue"
 import { createRouter, createWebHistory } from "vue-router"
+import TopView from "../views/TopView.vue"
+import RelayLoginData from "../views/RelayLoginData.vue"
+import HomeView from "../views/HomeView.vue"
+import firstQuestion from "../views/css_questions/first_question.vue"
+import secondQuestion from "../views/css_questions/second_question.vue"
+import thirdQuestion from "../views/css_questions/third_question.vue"
+import forthQuestion from "../views/css_questions/forth_question.vue"
+import fifithquestion from "../views/css_questions/fifth_question.vue"
+import sixthquestion from "../views/css_questions/6th_question.vue"
+import seventhquestion from "../views/css_questions/7th_question.vue"
+import eigthquestion from "../views/css_questions/8th_question.vue"
+import CSSPark from "../views/CSSPark.vue"
+import GameView from "../views/GameView.vue"
+import FeedbackView from "../views/FeedbackView.vue"
+import RecordView from "../views/RecordView.vue"
 
 const routes = [
+  {
+    path: "/top",
+    name: "top",
+    component: TopView,
+    props: true,
+  },
+  {
+    path: "/login-logout",
+    name: "login-logout",
+    component: RelayLoginData,
+    props: true,
+  },
   {
     path: "/",
     name: "home",
@@ -25,45 +43,74 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: "/css_questions/first-question",
+    path: "/css-park",
+    name: "css-park",
+    component: CSSPark,
+  },
+  {
+    path: "/game",
+    name: "game",
+    component: GameView,
+    props: true,
+  },
+  {
+    path: "/first_question",
     name: "firstQuestion",
     component: firstQuestion,
   },
-  /* eslint-disable */
+
   {
-    path: "/Lv1_Leaf",
-    name: "Lv1_Leaf",
-    component: Lv1_Leaf,
+    path: "/second_question",
+    name: "secondQuestion ",
+    component: secondQuestion,
+  },
+
+  {
+    path: "/third_question",
+    name: "thirdQuestion ",
+    component: thirdQuestion,
+  },
+
+  {
+    path: "/forth_question",
+    name: "forthQuestion ",
+    component: forthQuestion,
+  },
+
+  {
+    path: "/fifith_question",
+    name: "fifthQuestion",
+    component: fifithquestion,
+  },
+
+  {
+    path: "/6th_question",
+    name: "sixthquestion",
+    component: sixthquestion,
+  },
+
+  {
+    path: "/7th_question",
+    name: "seventhquestion",
+    component: seventhquestion,
+  },
+
+  {
+    path: "/8th_question",
+    name: "eigthquestion",
+    component: eigthquestion,
   },
   {
-    path: "/Lv2_Cylinder",
-    name: "Lv2_Cylinder",
-    component: Lv2_Cylinder,
+    path: "/feedback",
+    name: "feedback",
+    component: FeedbackView,
+    props: true,
   },
   {
-    path: "/Lv3_CancelButton",
-    name: "Lv3_CancelButton",
-    component: Lv3_CancelButton,
-  },
-  {
-    path: "/Lv4_UnknownIcon",
-    name: "Lv4_UnknownIcon",
-    component: Lv4_UnknownIcon,
-  },
-  {
-    path: "/Lv5_Triangle",
-    name: "Lv5_Triangle",
-    component: Lv5_Triangle,
-  },
-  {
-    path: "/Lv6_Infinity",
-    name: "Lv6_Infinity",
-    component: Lv6_Infinity,
-  },
-  {
-    path: "/three",
-    name: "three",
-    component: ThreeView,
+    path: "/record",
+    name: "record",
+    component: RecordView,
+    props: true,
   },
 ]
 
