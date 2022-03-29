@@ -4,6 +4,7 @@ import RelayLoginData from "../views/RelayLoginData.vue"
 import HomeView from "../views/HomeView.vue"
 import CSSPark from "../views/CSSPark.vue"
 import GameView from "../views/GameView.vue"
+import firstQuestion from "../views/css_questions/firstQuestion.vue"
 import FeedbackView from "../views/FeedbackView.vue"
 import RecordView from "../views/RecordView.vue"
 
@@ -38,6 +39,11 @@ const routes = [
     path: "/css-park",
     name: "css-park",
     component: CSSPark,
+  },
+  {
+    path: "/css_questions/first-question",
+    name: "firstQuestion",
+    component: firstQuestion,
   },
   {
     path: "/game",
