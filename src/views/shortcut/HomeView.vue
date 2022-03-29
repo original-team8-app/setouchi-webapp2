@@ -14,24 +14,6 @@
         class="firstImg mb-20"
         v-if="startFlag != true"
       />
-      <div class="clear" v-if="completed">
-        <h4>脱出成功！！</h4>
-        <img
-          src="@/assets/escape.jpg"
-          alt="脱出成功！"
-          class="escapeImg"
-          v-if="completed"
-        />
-      </div>
-      <div class="notclear" v-if="completed">
-        <h4>脱出失敗…</h4>
-        <img
-          src="@/assets/oboreru.png"
-          alt="脱出失敗"
-          class="notescapeImg"
-          v-if="completed"
-        />
-      </div>
     </div>
     <div v-if="startFlag != true" class="middleBox">
       <button class="startButton mb-20" @click="gameStart">GAME START</button>
@@ -52,6 +34,21 @@
       <div class="card">
         <div class="card-body">
           <p class="badge">結果</p>
+          <h4>脱出成功！！</h4>
+          <img
+            src="@/assets/escape.jpg"
+            alt="脱出成功！"
+            class="escapeImg"
+            v-if="completed"
+          />
+
+          <h4>脱出失敗…</h4>
+          <img
+            src="@/assets/oboreru.png"
+            alt="脱出失敗"
+            class="notescapeImg"
+            v-if="completed"
+          />
           <div v-for="(question, index) in this.questions" :key="question">
             <h4 class="card-title">{{ question.question }}</h4>
             <ul>
@@ -67,16 +64,15 @@
             >
             <hr />
           </div>
+          <div>
+            <button>リトライ</button>
+          </div>
         </div>
       </div>
     </div>
-    <div class="jumpBox" v-if="completed">
-      <button>リトライ</button>
-      <button>解説</button>
-      <button>タイトルへ</button>
-    </div>
     <div v-if="startFlag">
-      <div class="imgBox">
+      <div class="clear" v-if="!completed">
+        <!-- <div class="imgBox">
         <div class="seikai">
           <h4>正解！</h4>
           <img src="@/assets/maruta.png" alt="正解" class="seikaiImg" />
@@ -85,28 +81,29 @@
           <h4>残念！</h4>
           <img src="@/assets/basyabasya.jpg" alt="残念" class="zannenImg" />
         </div>
-      </div>
-      <p class="badge badge-dark">第 {{ questionIndex + 1 }} 問</p>
-      <div class="question mb-20">
-        {{ currentQuestion.question }}
-      </div>
-      <div class="choice mb-20">
-        <button
-          v-bind:key="answer"
-          v-for="(answer, index) in currentQuestion.answers"
-          @click="multipulHandler(index)"
-        >
-          {{ index + 1 }}. {{ answer }}
-        </button>
-      </div>
-      <div class="keyboad">
-        <img src="@/assets/keyboad.png" alt="キーボード" class="keyboadImg" />
-      </div>
-      <div class="gaugeWrapper mb-20">
-        <div v-bind:style="styleObject" class="gauge"></div>
-      </div>
-      <div class="question-count">
-        {{ current_question_counts }} / {{ question_counts }}
+      </div> -->
+        <p class="badge badge-dark">第 {{ questionIndex + 1 }} 問</p>
+        <div class="question mb-20">
+          {{ currentQuestion.question }}
+        </div>
+        <div class="choice mb-20">
+          <button
+            v-bind:key="answer"
+            v-for="(answer, index) in currentQuestion.answers"
+            @click="multipulHandler(index)"
+          >
+            {{ index + 1 }}. {{ answer }}
+          </button>
+        </div>
+        <div class="keyboad">
+          <img src="@/assets/keyboad.png" alt="キーボード" class="keyboadImg" />
+        </div>
+        <div class="gaugeWrapper mb-20">
+          <div v-bind:style="styleObject" class="gauge"></div>
+        </div>
+        <div class="question-count">
+          {{ current_question_counts }} / {{ question_counts }}
+        </div>
       </div>
     </div>
   </div>
