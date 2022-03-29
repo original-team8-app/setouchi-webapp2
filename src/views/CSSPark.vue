@@ -926,7 +926,7 @@ html {
   border: 1px solid #303030;
   border-radius: 5px;
   padding: 35px 0;
-  margin: 50px 20px;
+  margin: 50px 40px;
   position: relative;
 }
 .content__title {

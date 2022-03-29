@@ -1,15 +1,22 @@
 <template>
   <nav>
-
-
-    <h1 class="title">{{ title }}</h1>
+    <h1 class="nav-title">{{ title }}</h1>
     <div class="container">
-      <router-link :to="link.path" v-for="link in links" :key="link.index">
-        {{ link.text }}
+      <router-link
+        :to="link.path"
+        v-for="link in links"
+        :key="link.index"
+        :class="{ disabled: !isLoggin }"
+      >
+        {{ link.text }} |
       </router-link>
       <div>
-        <button v-if="isLoggin" v-on:click="logOut">ログアウト</button>
-        <button v-else v-on:click="logIn">まずはログイン</button>
+        <button class="login-button" v-if="isLoggin" v-on:click="logOut">
+          {{ logoutText }}
+        </button>
+        <button class="login-button" v-else v-on:click="logIn">
+          {{ loginText }}
+        </button>
       </div>
     </div>
 
@@ -19,25 +26,23 @@
 </template>
 <script>
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth"
+import swal from "sweetalert"
 
 export default {
   data() {
     return {
-      title: "タイトル",
-      loginText: "Googleでログイン",
+      title: "Codable",
+      loginText: "まずはログイン",
+      logoutText: "ログアウト",
       isLoggin: false,
       links: [
-        {
-          path: "/top",
-          text: "Top",
-        },
         {
           path: "/",
           text: "Home",
         },
         {
           path: "/about",
-          text: "About",
+          text: "Mayor CSS",
         },
         {
           path: "/css-park",
@@ -61,18 +66,26 @@ export default {
           if (result.user) {
             this.isLoggin = true
           }
-          this.$router.push("/loglog")
+          swal("ログインに成功しました！")
+          this.$router.push({
+            name: "login-logout",
+            params: { deliveryLoginData: this.isLoggin },
+          })
         })
         .catch((error) => {
           error.code
           error.message
           error.email
           GoogleAuthProvider.credentialFromError(error)
-          // ...
         })
     },
     logOut() {
       this.isLoggin = false
+      swal("ログアウトしました！")
+      this.$router.push({
+        name: "login-logout",
+        params: { deliveryLoginData: this.isLoggin },
+      })
     },
   },
 }
@@ -100,7 +113,7 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
   text-decoration: none;
-  margin-right: 25px;
+  margin-right: 10px;
   font-size: 1.2rem;
 }
 
@@ -108,16 +121,24 @@ nav a.router-link-exact-active {
   color: #303030;
   font-size: 1.3rem;
 }
-.title {
-  margin: 0;
+.nav-title {
+  margin: 0 0 0 20px;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  color: #303030;
 }
 .container {
   display: flex;
   align-items: center;
 }
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .login-button {
   margin: 0 15px;
-  padding: 8px;
+  width: 150px;
+  height: 40px;
   font-size: 1rem;
   border-radius: 5px;
 }

@@ -28,15 +28,20 @@
     </main>
   </div>
   <footer>
-    <p>(c) 2022 Setouchi Ganguro Revengers</p>
+    <p>{{ copyright }}</p>
   </footer>
 </template>
 
 <script>
+import swal from "sweetalert"
+
 export default {
+  props: ["relayLoginData"],
   data() {
     return {
-      title: "Setouchi Web App仮",
+      title: "Codable",
+      isLogin: this.relayLoginData,
+      copyright: "(c) 2022 Setouchi Ganguro Revengers",
       contents: [
         {
           name: "home",
@@ -51,7 +56,7 @@ export default {
           name: "about",
           imgPath: require("@/assets/Img1.jpeg"),
           altText: "",
-          mainTx: "Game",
+          mainTx: "Mayor CSS",
           bgColor: "rgba(165, 220, 220, 0.6)",
           subTx: "中級のゲーム。flexboxの使い方について楽しく学ぼう！。",
         },
@@ -68,7 +73,14 @@ export default {
   },
   methods: {
     toGames(game) {
-      this.$router.push({ name: game })
+      if (this.isLogin) {
+        this.$router.push({ name: game })
+      } else {
+        swal("まずはログインしてください！")
+      }
+    },
+    created() {
+      console.log(this.isLogin)
     },
   },
 }
@@ -88,7 +100,7 @@ html {
 }
 @keyframes titleAnimation {
   0% {
-    letter-spacing: 0.1em;
+    letter-spacing: 0.3em;
     opacity: 0;
   }
 }
@@ -96,7 +108,9 @@ html {
   font-size: 5rem;
   /* font-weight: bold; */
   display: inline-block;
-  margin: 120px auto 140px auto;
+  margin: 100px auto 120px auto;
+  letter-spacing: 0.15em;
+  text-decoration: underline 4px;
   animation: titleAnimation 1.5s;
 }
 @keyframes mainAnimation {
